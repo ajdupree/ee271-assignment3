@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<opml version="1.0">
+	<head>
+		<title>VCS dump file for DVE debugging</title>
+		<vcsVersion>F-2011.12_Full64</vcsVersion>
+		<dateCreated>Sun Dec  2 23:48:09 2012</dateCreated>
+	</head>
+	<body>
+		<!-- VCS compile options -->
+		<vcsCompileOptions text="/usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/bin/vcs1 -Mcc=gcc -Mcplusplus=g++ -Masflags= -Mloader=gcc -Mcfl= -pipe -O -I/usr/class/ee/synopsys/vcs-mx/F-2011.12/include  -Mldflags=  -Mout=simv -Mamsrun= -Mvcsaceobjs= -Mobjects=/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/gold/rastBBox_fix_sv.o /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/libvirsim.so /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/liberrorinf.so /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/libsnpsmalloc.so  -Msaverestoreobj=/usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/vcs_save_restore_new.o -Mcrt0= -Mcrtn= -Mcsrc= -Msyslibs=-ldl -lm  +cli +lint=PCWM +libext+.v -Xnotice -full64 +v2k -Xcbug=0x1 -timescale=1ns/1ns +noportcoerce -Xcbug=0x1 -top top_rast -pp_used +vcsd +itf+/usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/vcsdp.tab +cli+1 -debug=1 +memcbk -sverilog +vpi -gen_obj -f genesis_vlog.vf -y /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3 +incdir+/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3 -y /usr/class/ee/synopsys/dc_shell/F-2011.09-SP4/dw/sim_ver/ +incdir+/usr/class/ee/synopsys/dc_shell/F-2011.09-SP4/dw/sim_ver/ -y /usr/class/ee/synopsys/dc_shell/F-2011.09-SP4/packages/gtech/src_ver/ +incdir+/usr/class/ee/synopsys/dc_shell/F-2011.09-SP4/packages/gtech/src_ver/ "/>
+		<!-- File list for the whole design -->
+		<fileList>
+			<file fid="28" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/clocker_unq1.v" />
+			<file fid="1" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/dff2_unq1.v" />
+			<file fid="31" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/dff_unq11.v" />
+			<file fid="45" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/dff2_unq11.v" />
+			<file fid="18" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/dff2_unq5.v" />
+			<file fid="26" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/sampletest_unq1.v" />
+			<file fid="10" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/dff3_unq4.v" />
+			<file fid="41" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/dff_unq15.v" />
+			<file fid="49" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/dff_unq19.v" />
+			<file fid="50" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/smpl_cnt_sb_unq1.v" />
+			<file fid="11" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/dff_unq4.v" />
+			<file fid="21" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/dff_unq8.v" />
+			<file fid="25" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/dff_unq10.v" />
+			<file fid="33" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/dff3_unq6.v" />
+			<file fid="42" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/smpl_sb_unq1.v" />
+			<file fid="3" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/dff2_unq2.v" />
+			<file fid="2" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/dff3_unq1.v" />
+			<file fid="29" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/rast_driver_unq1.v" />
+			<file fid="34" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/dff_unq12.v" />
+			<file fid="47" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/dff2_unq12.v" />
+			<file fid="19" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/dff3_unq5.v" />
+			<file fid="20" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/dff2_unq6.v" />
+			<file fid="43" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/dff_unq16.v" />
+			<file fid="0" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/dff_unq1.v" />
+			<file fid="13" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/dff_unq5.v" />
+			<file fid="23" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/dff_unq9.v" />
+			<file fid="12" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/bbox_unq1.v" />
+			<file fid="32" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/dff2_unq8.v" />
+			<file fid="39" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/dff3_unq7.v" />
+			<file fid="4" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/dff3_unq2.v" />
+			<file fid="7" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/dff2_unq3.v" />
+			<file fid="35" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/dff_unq13.v" />
+			<file fid="24" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/dff2_unq7.v" />
+			<file fid="44" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/dff_unq17.v" />
+			<file fid="5" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/dff_unq2.v" />
+			<file fid="53" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/top_rast.v" />
+			<file fid="14" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/dff_unq6.v" />
+			<file fid="52" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/testbench_unq1.v" />
+			<file fid="16" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/tree_hash_unq1.v" />
+			<file fid="15" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/test_iterator_unq1.v" />
+			<file fid="38" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/dff2_unq9.v" />
+			<file fid="46" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/dff3_unq8.v" />
+			<file fid="22" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/hash_jtree_unq1.v" />
+			<file fid="54" path="/usr/class/ee/synopsys/dc_shell/F-2011.09-SP4/dw/sim_ver/DW_pl_reg.v" />
+			<file fid="40" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/dff2_unq10.v" />
+			<file fid="8" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/dff3_unq3.v" />
+			<file fid="9" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/dff2_unq4.v" />
+			<file fid="36" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/bbx_sb_unq1.v" />
+			<file fid="37" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/dff_unq14.v" />
+			<file fid="48" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/dff_unq18.v" />
+			<file fid="6" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/dff_unq3.v" />
+			<file fid="17" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/dff_unq7.v" />
+			<file fid="27" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_synth/rast.v" />
+			<file fid="30" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/zbuff_unq1.v" />
+			<file fid="51" path="/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/genesis_verif/perf_monitor_unq1.v" />
+		</fileList>
+		<!-- Include file list for the whole design -->
+		<includeFileList>
+		</includeFileList>
+		<!-- Encrypted codes list for the whole design -->
+		<encryptedCodesList>
+		</encryptedCodesList>
+		<!-- Inactive codes list for the whole design -->
+		<inactiveCodesList>
+		</inactiveCodesList>
+		<!-- Compile options UUM based -->
+		<langKeywords>
+			<svFiles fid="0-54" />
+		</langKeywords>
+		<!--  Case insensitive file list -->
+		<caseInsensitiveFiles fid="" />
+		<!-- Macro definition list for the whole design --> 
+		<macroDefinitionList>
+			<macro name="DW_en_msb" module="DW_pl_reg" sourceID="54" lineno="70" defID="54" defLine="66" value="1"  vip="false"/>
+			<macro name="DW_en_msb" module="DW_pl_reg" sourceID="54" lineno="78" defID="54" defLine="66" value="1"  vip="false"/>
+			<macro name="DW_en_msb" module="DW_pl_reg" sourceID="54" lineno="81" defID="54" defLine="66" value="1"  vip="false"/>
+			<macro name="DW_en_msb" module="unnamed$$_0" sourceID="54" lineno="96" defID="54" defLine="66" value="1"  vip="false"/>
+			<macro name="DW_en_msb" module="unnamed$$_2" sourceID="54" lineno="100" defID="54" defLine="66" value="1"  vip="false"/>
+			<macro name="DW_en_msb" module="unnamed$$_4" sourceID="54" lineno="108" defID="54" defLine="66" value="1"  vip="false"/>
+			<macro name="DW_en_msb" module="DW_pl_reg" sourceID="54" lineno="115" defID="54" defLine="66" value="1"  vip="false"/>
+		</macroDefinitionList>
+		<!-- Macro value list for the whole design --> 
+		<macroValueList>
+			<mv i="1" n="((stages-1+in_reg+out_reg &lt; 1)? 0 : (stages+in_reg+out_reg-2))" />
+		</macroValueList>
+	</body>
+</opml>

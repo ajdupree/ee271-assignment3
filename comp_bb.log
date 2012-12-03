@@ -1,0 +1,183 @@
+
+Warning-[LNX_OS_VERUN] Unsupported Linux version
+  Linux version '' is not supported on 'x86_64' officially, assuming linux 
+  compatibility by default. Set VCS_ARCH_OVERRIDE to linux or suse32 to 
+  override.
+  Please refer to release notes for information on supported platforms.
+
+
+Warning-[LINX_KRNL] Unsupported Linux kernel
+  Linux kernel '3.2.0-33-generic' is not supported.
+  Supported versions are 2.4* or 2.6*.
+
+*** Using c compiler gcc instead of cc ...
+*** Using loader gcc instead of cc ...
+/usr/class/ee/synopsys/vcs-mx/F-2011.12/bin/vcs: line 1633: dc: command not found
+                         Chronologic VCS (TM)
+         Version F-2011.12_Full64 -- Sun Dec  2 23:48:07 2012
+               Copyright (c) 1991-2011 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+Parsing design file 'genesis_synth/dff_unq1.v'
+Parsing design file 'genesis_synth/dff2_unq1.v'
+Parsing design file 'genesis_synth/dff3_unq1.v'
+Parsing design file 'genesis_synth/dff2_unq2.v'
+Parsing design file 'genesis_synth/dff3_unq2.v'
+Parsing design file 'genesis_synth/dff_unq2.v'
+Parsing design file 'genesis_synth/dff_unq3.v'
+Parsing design file 'genesis_synth/dff2_unq3.v'
+Parsing design file 'genesis_synth/dff3_unq3.v'
+Parsing design file 'genesis_synth/dff2_unq4.v'
+Parsing design file 'genesis_synth/dff3_unq4.v'
+Parsing design file 'genesis_synth/dff_unq4.v'
+Parsing design file 'genesis_synth/bbox_unq1.v'
+Parsing design file 'genesis_synth/dff_unq5.v'
+Parsing design file 'genesis_synth/dff_unq6.v'
+Parsing design file 'genesis_synth/test_iterator_unq1.v'
+Parsing design file 'genesis_synth/tree_hash_unq1.v'
+Parsing design file 'genesis_synth/dff_unq7.v'
+Parsing design file 'genesis_synth/dff2_unq5.v'
+Parsing design file 'genesis_synth/dff3_unq5.v'
+Parsing design file 'genesis_synth/dff2_unq6.v'
+Parsing design file 'genesis_synth/dff_unq8.v'
+Parsing design file 'genesis_synth/hash_jtree_unq1.v'
+Parsing design file 'genesis_synth/dff_unq9.v'
+Parsing design file 'genesis_synth/dff2_unq7.v'
+Parsing design file 'genesis_synth/dff_unq10.v'
+Parsing design file 'genesis_synth/sampletest_unq1.v'
+Parsing design file 'genesis_synth/rast.v'
+Parsing design file 'genesis_verif/clocker_unq1.v'
+Parsing design file 'genesis_verif/rast_driver_unq1.v'
+Parsing design file 'genesis_verif/zbuff_unq1.v'
+Parsing design file 'genesis_verif/dff_unq11.v'
+Parsing design file 'genesis_verif/dff2_unq8.v'
+Parsing design file 'genesis_verif/dff3_unq6.v'
+Parsing design file 'genesis_verif/dff_unq12.v'
+Parsing design file 'genesis_verif/dff_unq13.v'
+Parsing design file 'genesis_verif/bbx_sb_unq1.v'
+Parsing design file 'genesis_verif/dff_unq14.v'
+Parsing design file 'genesis_verif/dff2_unq9.v'
+Parsing design file 'genesis_verif/dff3_unq7.v'
+Parsing design file 'genesis_verif/dff2_unq10.v'
+Parsing design file 'genesis_verif/dff_unq15.v'
+Parsing design file 'genesis_verif/smpl_sb_unq1.v'
+Parsing design file 'genesis_verif/dff_unq16.v'
+Parsing design file 'genesis_verif/dff_unq17.v'
+Parsing design file 'genesis_verif/dff2_unq11.v'
+Parsing design file 'genesis_verif/dff3_unq8.v'
+Parsing design file 'genesis_verif/dff2_unq12.v'
+Parsing design file 'genesis_verif/dff_unq18.v'
+Parsing design file 'genesis_verif/dff_unq19.v'
+Parsing design file 'genesis_verif/smpl_cnt_sb_unq1.v'
+Parsing design file 'genesis_verif/perf_monitor_unq1.v'
+Parsing design file 'genesis_verif/testbench_unq1.v'
+Parsing design file 'genesis_verif/top_rast.v'
+Parsing library directory file '/usr/class/ee/synopsys/dc_shell/F-2011.09-SP4/dw/sim_ver/DW_pl_reg.v'
+Top Level Modules:
+       top_rast
+TimeScale is 1 ns / 1 ns
+Starting vcs inline pass...
+44 modules and 0 UDP read.
+Generating code for _VCSgd__vcs_unit_1282674485_hvXagb_1
+Generating code for _VCSgd_std_1
+recompiling module dff_unq1
+Generating code for _VCSgd_dff_unq1_TC2OEe_1
+recompiling module dff2_unq1
+Generating code for _VCSgd_dff2_unq1_3ciCce_1
+recompiling module dff3_unq1
+Generating code for _VCSgd_dff3_unq1_HVYWOd_1
+recompiling module dff2_unq2
+Generating code for _VCSgd_dff2_unq2_wUQp0d_1
+recompiling module dff3_unq2
+Generating code for _VCSgd_dff3_unq2_Wl4DSd_1
+recompiling module dff_unq3
+Generating code for _VCSgd_dff_unq3_tkBlNe_1
+recompiling module dff2_unq3
+Generating code for _VCSgd_dff2_unq3_FTU63d_1
+recompiling module dff3_unq3
+Generating code for _VCSgd_dff3_unq3_T29kWd_1
+recompiling module dff2_unq4
+Generating code for _VCSgd_dff2_unq4_2FG0Sd_1
+recompiling module dff3_unq4
+Generating code for _VCSgd_dff3_unq4_m4FRYd_1
+recompiling module dff_unq4
+Generating code for _VCSgd_dff_unq4_IwQvje_1
+recompiling module bbox_unq1
+Generating code for _VCSgd_bbox_unq1_rPFpOc_1
+recompiling module dff_unq6
+Generating code for _VCSgd_dff_unq6_otKate_1
+recompiling module test_iterator_unq1
+Generating code for _VCSgd_test_iterator_unq1_8pHJie_1
+recompiling module dff_unq7
+Generating code for _VCSgd_dff_unq7_Jynzye_1
+recompiling module dff2_unq5
+Generating code for _VCSgd_dff2_unq5_bPaQXd_1
+recompiling module dff3_unq5
+Generating code for _VCSgd_dff3_unq5_Hv8G3d_1
+recompiling module dff2_unq6
+Generating code for _VCSgd_dff2_unq6_GZRmJd_1
+recompiling module hash_jtree_unq1
+Generating code for _VCSgd_hash_jtree_unq1_LxW6Kc_1
+recompiling module dff_unq9
+Generating code for _VCSgd_dff_unq9_F5Cb2d_1
+recompiling module dff2_unq7
+Generating code for _VCSgd_dff2_unq7_XiU3Md_1
+recompiling module sampletest_unq1
+Generating code for _VCSgd_sampletest_unq1_V9mWYc_1
+recompiling module rast
+Generating code for _VCSgd_rast_1
+recompiling module rast_driver_unq1
+Generating code for _VCSgd_rast_driver_unq1_fKQNEe_1
+recompiling module zbuff_unq1
+Generating code for _VCSgd_zbuff_unq1_sde69b_1
+recompiling module dff_unq11
+Generating code for _VCSgd_dff_unq11_5I8uO_1
+recompiling module dff2_unq8
+Generating code for _VCSgd_dff2_unq8_422XOe_1
+recompiling module dff3_unq6
+Generating code for _VCSgd_dff3_unq6_GBXE9d_1
+recompiling module bbx_sb_unq1
+Generating code for _VCSgd_bbx_sb_unq1_skNc5d_1
+recompiling module dff_unq14
+Generating code for _VCSgd_dff_unq14_QQYu7_1
+recompiling module dff2_unq9
+Generating code for _VCSgd_dff2_unq9_BIjIKe_1
+recompiling module dff3_unq7
+Generating code for _VCSgd_dff3_unq7_Jz0lde_1
+recompiling module dff2_unq10
+Generating code for _VCSgd_dff2_unq10_71N20b_1
+recompiling module dff_unq15
+Generating code for _VCSgd_dff_unq15_nUif3_1
+recompiling module smpl_sb_unq1
+Generating code for _VCSgd_smpl_sb_unq1_ft953b_1
+recompiling module dff_unq17
+Generating code for _VCSgd_dff_unq17_VA3Scb_1
+recompiling module dff2_unq11
+Generating code for _VCSgd_dff2_unq11_eLimXb_1
+recompiling module dff3_unq8
+Generating code for _VCSgd_dff3_unq8_UTKGme_1
+recompiling module dff2_unq12
+Generating code for _VCSgd_dff2_unq12_9bcy9b_1
+recompiling module smpl_cnt_sb_unq1
+Generating code for _VCSgd_smpl_cnt_sb_unq1_ChfxP_1
+recompiling module perf_monitor_unq1
+Generating code for _VCSgd_perf_monitor_unq1_RiFHS_1
+recompiling module testbench_unq1
+Generating code for _VCSgd_testbench_unq1_OpXQPe_1
+recompiling module top_rast
+Generating code for _VCSgd_top_rast_P7KCG_1
+All of 45 modules done
+/usr/class/ee/synopsys/vcs-mx/F-2011.12/bin/vcs: line 1633: dc: command not found
+/usr/class/ee/synopsys/vcs-mx/F-2011.12/bin/vcs: line 1633: dc: command not found
+/usr/class/ee/synopsys/vcs-mx/F-2011.12/bin/vcs: line 1633: dc: command not found
+/usr/class/ee/synopsys/vcs-mx/F-2011.12/bin/vcs: line 1633: dc: command not found
+/usr/class/ee/synopsys/vcs-mx/F-2011.12/bin/vcs: line 1633: dc: command not found
+make[1]: Entering directory `/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/csrc'
+if [ -x ../simv ]; then chmod -x ../simv; fi
+gcc  -o ../simv    -Wl,-whole-archive    -Wl,-no-whole-archive  /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/gold/rastBBox_fix_sv.o  _vcsobj_1_1.o  5NrI_d.o 5NrIB_d.o SIM_l.o    rmapats_mop.o rmapats.o      /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/libvirsim.so /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/liberrorinf.so /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/libsnpsmalloc.so     /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/libvcsnew.so /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/libuclinative.so         /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/vcs_save_restore_new.o -ldl -lm  -lc -lpthread -ldl 
+../simv up to date
+make[1]: Leaving directory `/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/csrc'

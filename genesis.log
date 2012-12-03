@@ -1,0 +1,98 @@
+
+Genesis2::Manager->print_cmdline: Your Complete Genesis2 Command Line:
+/usr/class/ee/genesis2/r11012/PerlLibs/Genesis2/Genesis2.pl                                         \
+    -gen                                                                                            \
+    -top top_rast                                                                                   \
+    -synthtop top_rast.rast                                                                         \
+    -depend depend.list                                                                             \
+    -product genesis_vlog.vf                                                                        \
+    -hierarchy rast.xml                                                                             \
+    -xml empty.xml                                                                                  \
+    -parse                                                                                          \
+    -srcpath ./                                                                                     \
+    -srcpath /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/rtl                                \
+    -srcpath /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/verif                              \
+    -incpath ./                                                                                     \
+    -incpath /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/rtl                                \
+    -incpath /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/verif                              \
+    -input bbx2trsl_monitor.vp bbx_sb.vp clocker.vp gm2rst_monitor.vp perf_monitor.vp               \
+        rast_driver.vp rst2zbuff_monitor.vp smpl_cnt_sb.vp smpl_sb.vp testbench.vp top_rast.vp      \
+        trsl2smpl_monitor.vp zbuff.vp bbox.vp dff.vp dff2.vp dff3.vp hash_jtree.vp rast.vp          \
+        sampletest.vp test_iterator.vp tree_hash.vp                                                 \
+    -input bbx2trsl_monitor.vp bbx_sb.vp clocker.vp gm2rst_monitor.vp perf_monitor.vp               \
+        rast_driver.vp rst2zbuff_monitor.vp smpl_cnt_sb.vp smpl_sb.vp testbench.vp top_rast.vp      \
+        trsl2smpl_monitor.vp zbuff.vp bbox.vp dff.vp dff2.vp dff3.vp hash_jtree.vp rast.vp          \
+        sampletest.vp test_iterator.vp tree_hash.vp                                                 \
+    -debug 0 
+
+-----------------------------------------------
+--- Genesis Is Starting Work On Your Design ---
+-----------------------------------------------
+
+-----------------------------------------------
+|            Genesis Release Info             |
+|  $Change: 11012 $ --- $Date: 2012/09/13 $   |
+-----------------------------------------------
+
+
+Genesis2::Manager->execute: Starting Source File Parsing Phase
+Genesis2::Manager->parse_files: Now parsing file bbx2trsl_monitor.vp
+Genesis2::Manager->parse_files: Now parsing file bbx_sb.vp
+Genesis2::Manager->parse_files: Now parsing file clocker.vp
+Genesis2::Manager->parse_files: Now parsing file gm2rst_monitor.vp
+Genesis2::Manager->parse_files: Now parsing file perf_monitor.vp
+Genesis2::Manager->parse_files: Now parsing file rast_driver.vp
+Genesis2::Manager->parse_files: Now parsing file rst2zbuff_monitor.vp
+Genesis2::Manager->parse_files: Now parsing file smpl_cnt_sb.vp
+Genesis2::Manager->parse_files: Now parsing file smpl_sb.vp
+Genesis2::Manager->parse_files: Now parsing file testbench.vp
+Genesis2::Manager->parse_files: Now parsing file top_rast.vp
+Genesis2::Manager->parse_files: Now parsing file trsl2smpl_monitor.vp
+Genesis2::Manager->parse_files: Now parsing file zbuff.vp
+Genesis2::Manager->parse_files: Now parsing file bbox.vp
+Genesis2::Manager->parse_files: Now parsing file dff.vp
+Genesis2::Manager->parse_files: Now parsing file dff2.vp
+Genesis2::Manager->parse_files: Now parsing file dff3.vp
+Genesis2::Manager->parse_files: Now parsing file hash_jtree.vp
+Genesis2::Manager->parse_files: Now parsing file rast.vp
+Genesis2::Manager->parse_files: Now parsing file sampletest.vp
+Genesis2::Manager->parse_files: Now parsing file test_iterator.vp
+Genesis2::Manager->parse_files: Now parsing file tree_hash.vp
+Genesis2::Manager->parse_files: Now parsing file bbx2trsl_monitor.vp
+Genesis2::Manager->parse_files: Now parsing file bbx_sb.vp
+Genesis2::Manager->parse_files: Now parsing file clocker.vp
+Genesis2::Manager->parse_files: Now parsing file gm2rst_monitor.vp
+Genesis2::Manager->parse_files: Now parsing file perf_monitor.vp
+Genesis2::Manager->parse_files: Now parsing file rast_driver.vp
+Genesis2::Manager->parse_files: Now parsing file rst2zbuff_monitor.vp
+Genesis2::Manager->parse_files: Now parsing file smpl_cnt_sb.vp
+Genesis2::Manager->parse_files: Now parsing file smpl_sb.vp
+Genesis2::Manager->parse_files: Now parsing file testbench.vp
+Genesis2::Manager->parse_files: Now parsing file top_rast.vp
+Genesis2::Manager->parse_files: Now parsing file trsl2smpl_monitor.vp
+Genesis2::Manager->parse_files: Now parsing file zbuff.vp
+Genesis2::Manager->parse_files: Now parsing file bbox.vp
+Genesis2::Manager->parse_files: Now parsing file dff.vp
+Genesis2::Manager->parse_files: Now parsing file dff2.vp
+Genesis2::Manager->parse_files: Now parsing file dff3.vp
+Genesis2::Manager->parse_files: Now parsing file hash_jtree.vp
+Genesis2::Manager->parse_files: Now parsing file rast.vp
+Genesis2::Manager->parse_files: Now parsing file sampletest.vp
+Genesis2::Manager->parse_files: Now parsing file test_iterator.vp
+Genesis2::Manager->parse_files: Now parsing file tree_hash.vp
+Genesis2::Manager->execute: Done With Source File Parsing Phase
+
+Genesis2::Manager->execute: Starting Verilog Code Generation Phase
+Genesis2::ConfigHandler->ReadXml: Now reading XML config file: empty.xml
+Genesis2::ConfigHandler->SetPrmOverrides: Now processing command line parameter overrides
+Genesis2::Manager->gen_verilog: Starting code generation from module top_rast
+Genesis2::Manager->execute: Done With Verilog Code Generation Phase
+
+Genesis2::Manager->execute: Starting Auxiliary File Generation Phase
+Genesis2::ConfigHandler->WriteXml: Now writing output XML file: rast.xml
+Genesis2::Manager->execute: Done With Auxiliary File Generation Phase
+
+-----------------------------------------------
+--- Genesis Finished Generating Your Design ---
+-----------------------------------------------
+
