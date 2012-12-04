@@ -204,7 +204,7 @@ print { $self->{OutfileHandle} } '      assert( 0 ) else $fatal( "Sample test un
 print { $self->{OutfileHandle} } '   end  ';print { $self->{OutfileHandle} } "\n"; 
     }
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '   assign hit_valid_R16H = & {edge_chk1_R16[2:0], validSamp_R16H}; //Back Face Cull Case';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '   assign hit_valid_R16H = & {edge_chk1_R16[2:0], validSamp_R16H}; //Back Face cull Case';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n"; 

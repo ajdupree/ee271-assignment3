@@ -1,7 +1,7 @@
 Command: /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/simv -l /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/simv.log +vpdbufsize+100 +vpdfileswitchsize+100 +testname=/usr/class/ee271/project//vect//vec_271_01_sv_short.dat
 Chronologic VCS simulator copyright 1991-2011
 Contains Synopsys proprietary information.
-Compiler version F-2011.12_Full64; Runtime version F-2011.12_Full64;  Dec  2 23:48 2012
+Compiler version F-2011.12_Full64; Runtime version F-2011.12_Full64;  Dec  4 14:40 2012
 Message: From $vcdplusmemon at time 0 in file genesis_verif/testbench_unq1.v line 369: [VCD+-SFSL]: 
 Setting file switch size limit to (100) megabytes.
 Message: From $vcdplusmemon at time 0 in file genesis_verif/testbench_unq1.v line 369: [VCD+-SVBS]: 
@@ -45,5 +45,5 @@ $finish called from file "genesis_verif/testbench_unq1.v", line 328.
 $finish at simulation time            235423040
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 235423040 ns
-CPU Time:     19.750 seconds;       Data structure size:   0.3Mb
-Sun Dec  2 23:48:34 2012
+CPU Time:     14.930 seconds;       Data structure size:   0.3Mb
+Tue Dec  4 14:40:29 2012

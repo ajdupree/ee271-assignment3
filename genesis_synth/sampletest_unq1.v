@@ -211,7 +211,7 @@ module  sampletest_unq1
       edge_chk1_R16[2] =  dist_lg_R16S[2]  <=  0 ;
    end  
 
-   assign hit_valid_R16H = & {edge_chk1_R16[2:0], validSamp_R16H}; //Back Face Cull Case
+   assign hit_valid_R16H = & {edge_chk1_R16[2:0], validSamp_R16H}; //Back Face cull Case
 
 
    

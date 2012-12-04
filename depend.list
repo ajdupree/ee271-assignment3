@@ -12,9 +12,9 @@ src top_rast.vp
 src trsl2smpl_monitor.vp
 src zbuff.vp
 src bbox.vp
-src dff.vp
 src dff2.vp
 src dff3.vp
+src dff.vp
 src hash_jtree.vp
 src rast.vp
 src sampletest.vp

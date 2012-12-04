@@ -7,14 +7,13 @@ Warning-[LNX_OS_VERUN] Unsupported Linux version
 
 
 Warning-[LINX_KRNL] Unsupported Linux kernel
-  Linux kernel '3.2.0-33-generic' is not supported.
+  Linux kernel '3.2.0-30-generic' is not supported.
   Supported versions are 2.4* or 2.6*.
 
 *** Using c compiler gcc instead of cc ...
 *** Using loader gcc instead of cc ...
-/usr/class/ee/synopsys/vcs-mx/F-2011.12/bin/vcs: line 1633: dc: command not found
                          Chronologic VCS (TM)
-         Version F-2011.12_Full64 -- Sun Dec  2 23:48:07 2012
+         Version F-2011.12_Full64 -- Tue Dec  4 14:39:30 2012
                Copyright (c) 1991-2011 by Synopsys Inc.
                          ALL RIGHTS RESERVED
 
@@ -171,13 +170,9 @@ Generating code for _VCSgd_testbench_unq1_OpXQPe_1
 recompiling module top_rast
 Generating code for _VCSgd_top_rast_P7KCG_1
 All of 45 modules done
-/usr/class/ee/synopsys/vcs-mx/F-2011.12/bin/vcs: line 1633: dc: command not found
-/usr/class/ee/synopsys/vcs-mx/F-2011.12/bin/vcs: line 1633: dc: command not found
-/usr/class/ee/synopsys/vcs-mx/F-2011.12/bin/vcs: line 1633: dc: command not found
-/usr/class/ee/synopsys/vcs-mx/F-2011.12/bin/vcs: line 1633: dc: command not found
-/usr/class/ee/synopsys/vcs-mx/F-2011.12/bin/vcs: line 1633: dc: command not found
 make[1]: Entering directory `/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/csrc'
 if [ -x ../simv ]; then chmod -x ../simv; fi
 gcc  -o ../simv    -Wl,-whole-archive    -Wl,-no-whole-archive  /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/gold/rastBBox_fix_sv.o  _vcsobj_1_1.o  5NrI_d.o 5NrIB_d.o SIM_l.o    rmapats_mop.o rmapats.o      /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/libvirsim.so /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/liberrorinf.so /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/libsnpsmalloc.so     /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/libvcsnew.so /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/libuclinative.so         /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/vcs_save_restore_new.o -ldl -lm  -lc -lpthread -ldl 
 ../simv up to date
 make[1]: Leaving directory `/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/csrc'
+CPU time: .752 seconds to compile + .084 seconds to elab + .268 seconds to link
