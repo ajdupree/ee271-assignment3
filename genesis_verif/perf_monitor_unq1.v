@@ -105,7 +105,7 @@ module perf_monitor_unq1
 				     .clk(clk) , .reset(rst), .en(1'b1),
 				     .out(poly_RnnS));
 
-	dff3_unq6  d_011 (
+	dff3_unq8  d_011 (
 					 .in(poly_R16S) , 
 				     .clk(clk) , .reset(rst), .en(1'b1),
 				     .out(poly_Rn1S));

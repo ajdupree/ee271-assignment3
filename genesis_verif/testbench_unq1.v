@@ -19,7 +19,7 @@
 //
 //	From 'generate' statement (priority=5):
 // Parameter Radix 	= 10
-// Parameter PipesBox 	= 3
+// Parameter PipesBox 	= 5
 // Parameter Axis 	= 3
 // Parameter DUT_obj 	= Data structure of type rast
 // Parameter PipesIter 	= 1
@@ -73,7 +73,7 @@
 //
 // Colors (_GENESIS2_INHERITANCE_PRIORITY_) = 3
 //
-// PipesBox (_GENESIS2_INHERITANCE_PRIORITY_) = 3
+// PipesBox (_GENESIS2_INHERITANCE_PRIORITY_) = 5
 //
 // PipesIter (_GENESIS2_INHERITANCE_PRIORITY_) = 1
 //

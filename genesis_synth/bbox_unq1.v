@@ -23,7 +23,7 @@
 // Parameter Axis 	= 3
 // Parameter SigFig 	= 24
 // Parameter Colors 	= 3
-// Parameter PipelineDepth 	= 3
+// Parameter PipelineDepth 	= 5
 //
 //		---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
@@ -153,7 +153,7 @@
 //
 // Colors (_GENESIS2_INHERITANCE_PRIORITY_) = 3
 //
-// PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 3
+// PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 5
 //
 
 
@@ -205,6 +205,14 @@ module bbox_unq1
    logic 				isQuad_R13H_retime;                   // Is Poly Quad?
    logic 				validPoly_R13H_retime ;                 // Valid Data for Operation
    // output for retiming registers
+	
+	//logic for backface culling
+  logic signed [24-1:0] edges [1:0][1:0]; // two edges, two axes. edges 1-2 and 2-3
+	logic signed [47:0] z_crossproduct, z1, z2;	
+	logic cull;
+	logic outValidAndCull;
+   
+	//logic for backface check
 
    /* OLD QUAD CODE Used to be here */
    
@@ -218,6 +226,36 @@ module bbox_unq1
     * talk with John B.
     * */
 
+	
+	 //Backface culling. Detect backward facing polygons, set valid_samp low
+	 always_comb begin
+	 	//v2 - v1
+	 	edges[0][0] = poly_R10S[1][0] - poly_R10S[0][0]; //v2[x]-v1[x]
+		edges[0][1] = poly_R10S[1][1] - poly_R10S[0][1]; //v2[y]-v1[y]
+
+		//v3-v2
+	 	edges[1][0] = poly_R10S[2][0] - poly_R10S[1][0]; //v3[x]-v2[x]
+		edges[1][1] = poly_R10S[2][1] - poly_R10S[1][1]; //v3[y]-v2[y]
+
+		z_crossproduct = (edges[0][0]*edges[1][1])-(edges[0][1]*edges[1][0]); //z output of cross product
+		cull = (z_crossproduct > 0) ? 1'b1 : 1'b0; //z > 0 implies backfacing which means cull
+
+	 end 
+
+  /*	//v2 - v1
+	 	assign edges[0][0] = poly_R10S[1][0] - poly_R10S[0][0]; //v2[x]-v1[x]
+		assign edges[0][1] = poly_R10S[1][1] - poly_R10S[0][1]; //v2[y]-v1[y]
+
+		//v3-v2
+	 	assign edges[1][0] = poly_R10S[2][0] - poly_R10S[1][0]; //v3[x]-v2[x]
+		assign edges[1][1] = poly_R10S[2][1] - poly_R10S[1][1]; //v3[y]-v2[y]
+
+		assign z1 = edges[0][0]*edges[1][1];
+		assign z2 = edges[0][1]*edges[1][0];
+		
+		assign z_crossproduct = z1 - z2; //z output of cross product
+		assign cull = (z_crossproduct > 0) ? 1'b1 : 1'b0; //z > 0 implies backfacing which means cull
+*/
 
    //Note: <= might be faster than < and functionally equivelant here
    always_comb begin
@@ -492,7 +530,8 @@ module bbox_unq1
    end
    //Select Between Screen Bounds and Rounded Bounds
    
-   assign  outvalid_R10H = ~( | invalidate_R10H ) & validPoly_R10H ;
+   assign  outvalid_R10H = ~( | invalidate_R10H ) & validPoly_R10H;
+	 assign outValidAndCull = outvalid_R10H && ~cull;
 
    
    //Flop Clamped Box to R13_retime with retiming registers
@@ -512,7 +551,7 @@ module bbox_unq1
 			       .out(box_R13S_retime));
    
    dff_unq2  d_bbx_r4(
-			      .in({isQuad_R10H, outvalid_R10H}) , 
+			      .in({isQuad_R10H, outValidAndCull}) , 
 			      .clk(clk) , .reset(rst), .en(halt_RnnnnL),
 			      .out({isQuad_R13H_retime, validPoly_R13H_retime}));
    //Flop Clamped Box to R13_retime with retiming registers

@@ -7,7 +7,7 @@ Report : power
         -analysis_effort high
 Design : rast
 Version: F-2011.09-SP4
-Date   : Sun Dec  2 22:36:30 2012
+Date   : Wed Dec  5 16:17:14 2012
 ****************************************
 
 
@@ -21,7 +21,7 @@ Wire Load Model Mode: top
 
 Design        Wire Load Model            Library
 ------------------------------------------------
-rast                   TSMC32K_Lowk_Conservative
+rast                   TSMC64K_Lowk_Conservative
                                          tcbn45gsbwpml
 
 
@@ -34,12 +34,12 @@ Power-specific unit information :
     Leakage Power Units = 1nW
 
 
-  Cell Internal Power  =  70.4023 mW   (88%)
-  Net Switching Power  =   9.7634 mW   (12%)
+  Cell Internal Power  = 110.1972 mW   (87%)
+  Net Switching Power  =  16.4012 mW   (13%)
                          ---------
-Total Dynamic Power    =  80.1657 mW  (100%)
+Total Dynamic Power    = 126.5984 mW  (100%)
 
-Cell Leakage Power     =  32.7064 mW
+Cell Leakage Power     =  45.0335 mW
 
 
                  Internal         Switching           Leakage            Total
@@ -49,9 +49,9 @@ io_pad             0.0000            0.0000            0.0000            0.0000 
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
-register          56.3583            1.4455        7.9944e+06           65.7982  (  58.29%)
+register          88.2430            2.6458        1.1085e+07          101.9744  (  59.41%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational     14.0444            8.3180        2.4714e+07           47.0740  (  41.71%)
+combinational     21.9536           13.7549        3.3947e+07           69.6577  (  40.59%)
 --------------------------------------------------------------------------------------------------
-Total             70.4027 mW         9.7634 mW     3.2708e+07 nW       112.8722 mW
+Total            110.1966 mW        16.4007 mW     4.5032e+07 nW       171.6321 mW
 1

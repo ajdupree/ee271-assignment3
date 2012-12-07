@@ -273,7 +273,7 @@ module smpl_cnt_sb_unq1
    //Sample Hit Counter
 
    //Pipe Micropolygon Along
-	dff3_unq8  d_01 (
+	dff3_unq6  d_01 (
 					 .in(poly_R16S) , 
 				     .clk(clk) , .reset(rst), .en(1'b1),
 				     .out(poly_RnnS));
@@ -285,25 +285,25 @@ module smpl_cnt_sb_unq1
 				     .out(poly_Rn1S));
 					 
 					 
-	dff2_unq11  d_02 (
+	dff2_unq8  d_02 (
 					 .in(color_R16U) , 
 				     .clk(clk) , .reset(rst), .en(1'b1),
 				     .out(color_RnnU));
 	
-	dff2_unq12  d_03 (
+	dff2_unq11  d_03 (
 					 .in(sample_R16S) , 
 				     .clk(clk) , .reset(rst), .en(1'b1),
 				     .out(sample_RnnS));				 
 					 						
 	
-	dff_unq18  d_04 (
+	dff_unq12  d_04 (
 					 .in({validSamp_R16H, isQuad_R16H}) , 
 				     .clk(clk) , .reset(rst), .en(1'b1),
 				     .out({validSamp_RnnH, isQuad_RnnH}));	
 
 
 	
-	dff_unq19  d_041 (
+	dff_unq17  d_041 (
 					 .in(isQuad_R16H) , 
 				     .clk(clk) , .reset(rst), .en(1'b1),
 				     .out(isQuad_Rn1H));					 

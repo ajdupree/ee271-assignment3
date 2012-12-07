@@ -22,7 +22,7 @@
 // Parameter BitWidth 	= 24
 // Parameter ArraySize1 	= 3
 // Parameter Retime 	= NO
-// Parameter PipelineDepth 	= 5
+// Parameter PipelineDepth 	= 3
 //
 //		---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
@@ -59,7 +59,7 @@
 //
 // ArraySize2 (_GENESIS2_INHERITANCE_PRIORITY_) = 3
 //
-// PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 5
+// PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 3
 //
 // Retime (_GENESIS2_INHERITANCE_PRIORITY_) = NO
 //
@@ -70,15 +70,15 @@ module dff3_unq8 (
 		output logic [23:0] out[2:0][2:0]
 		);	
    
-   dff2_unq11  dff2_0 
+   dff2_unq12  dff2_0 
      (.in(in[0]) , 
       .clk(clk) , .reset(reset), .en(en),
       .out(out[0]));
-   dff2_unq11  dff2_1 
+   dff2_unq12  dff2_1 
      (.in(in[1]) , 
       .clk(clk) , .reset(reset), .en(en),
       .out(out[1]));
-   dff2_unq11  dff2_2 
+   dff2_unq12  dff2_2 
      (.in(in[2]) , 
       .clk(clk) , .reset(reset), .en(en),
       .out(out[2]));

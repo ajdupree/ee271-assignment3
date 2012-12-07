@@ -14,13 +14,12 @@ genesis_verif/dff2_unq10.v
 genesis_verif/dff_unq15.v
 genesis_verif/smpl_sb_unq1.v
 genesis_verif/dff_unq16.v
-genesis_verif/dff_unq17.v
 genesis_verif/dff2_unq11.v
-genesis_verif/dff3_unq8.v
-genesis_verif/dff2_unq12.v
-genesis_verif/dff_unq18.v
-genesis_verif/dff_unq19.v
+genesis_verif/dff_unq17.v
 genesis_verif/smpl_cnt_sb_unq1.v
+genesis_verif/dff_unq18.v
+genesis_verif/dff2_unq12.v
+genesis_verif/dff3_unq8.v
 genesis_verif/perf_monitor_unq1.v
 genesis_verif/testbench_unq1.v
 genesis_verif/top_rast.v
