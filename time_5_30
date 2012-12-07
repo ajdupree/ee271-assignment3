@@ -1,0 +1,63 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rast
+Version: F-2011.09-SP4
+Date   : Wed Dec  5 12:11:27 2012
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: MLCOM   Library: tcbn45gsbwpml
+Wire Load Model Mode: top
+
+  Startpoint: bbox/DP_OP_59J2_124_183/clk_r_REG2450_S3
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: bbox/DP_OP_59J2_124_183/clk_r_REG1801_S4
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rast               TSMC64K_Lowk_Conservative
+                                           tcbn45gsbwpml
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                 0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  bbox/DP_OP_59J2_124_183/clk_r_REG2450_S3/CP (EDFCNQD4BWP)
+                                                        0.0000 #   0.0000 r
+  bbox/DP_OP_59J2_124_183/clk_r_REG2450_S3/Q (EDFCNQD4BWP)
+                                                        0.0484     0.0484 r
+  bbox/U6/ZN (INVD3BWP)                                 0.0065     0.0548 f
+  bbox/U23/ZN (CKND4BWP)                                0.0061     0.0609 r
+  bbox/U2618/Z (CKXOR2D2BWP)                            0.0252     0.0861 f
+  bbox/U2005/ZN (OAI22D4BWP)                            0.0113     0.0975 r
+  bbox/U2209/S (FA1D4BWP)                               0.0471     0.1446 f
+  bbox/U2280/Z (XOR3D4BWP)                              0.0467     0.1913 r
+  bbox/U2109/CO (FA1D4BWP)                              0.0379     0.2292 r
+  bbox/U1389/S (FA1D2BWP)                               0.0255     0.2547 f
+  bbox/U3699/S (FA1D2BWP)                               0.0261     0.2808 r
+  bbox/DP_OP_59J2_124_183/clk_r_REG1801_S4/D (EDFCNQD1BWP)
+                                                        0.0000     0.2808 r
+  data arrival time                                                0.2808
+
+  clock clk (rise edge)                                 0.3000     0.3000
+  clock network delay (ideal)                           0.0000     0.3000
+  bbox/DP_OP_59J2_124_183/clk_r_REG1801_S4/CP (EDFCNQD1BWP)
+                                                        0.0000     0.3000 r
+  library setup time                                   -0.0314     0.2686
+  data required time                                               0.2686
+  --------------------------------------------------------------------------
+  data required time                                               0.2686
+  data arrival time                                               -0.2808
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                -0.0122
+
+
+1

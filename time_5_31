@@ -1,0 +1,70 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rast
+Version: F-2011.09-SP4
+Date   : Wed Dec  5 12:27:24 2012
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: MLCOM   Library: tcbn45gsbwpml
+Wire Load Model Mode: top
+
+  Startpoint: bbox/clk_r_REG1855_S3_IP
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: bbox/DP_OP_59J2_124_183/clk_r_REG1094_S4
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rast               TSMC64K_Lowk_Conservative
+                                           tcbn45gsbwpml
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                 0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  bbox/clk_r_REG1855_S3_IP/CP (EDFCNQD4BWP)             0.0000 #   0.0000 r
+  bbox/clk_r_REG1855_S3_IP/Q (EDFCNQD4BWP)              0.0423     0.0423 r
+  bbox/U2659/ZN (INVD8BWP)                              0.0078     0.0501 f
+  bbox/U2751/ZN (INR2XD4BWP)                            0.0100     0.0601 r
+  bbox/U1760/ZN (OAI21D4BWP)                            0.0093     0.0694 f
+  bbox/U58/ZN (AOI21D4BWP)                              0.0162     0.0856 r
+  bbox/U3597/ZN (OAI21D4BWP)                            0.0174     0.1030 f
+  bbox/U3010/ZN (ND2D4BWP)                              0.0085     0.1115 r
+  bbox/U51/ZN (CKND6BWP)                                0.0070     0.1185 f
+  bbox/U3009/ZN (NR2XD8BWP)                             0.0092     0.1277 r
+  bbox/U2832/ZN (OAI21D4BWP)                            0.0090     0.1367 f
+  bbox/U3239/ZN (XNR2D4BWP)                             0.0265     0.1632 f
+  bbox/U2818/ZN (XNR2D4BWP)                             0.0354     0.1986 r
+  bbox/U4150/ZN (ND2D4BWP)                              0.0117     0.2103 f
+  bbox/U4020/Z (DCCKBD12BWP)                            0.0174     0.2277 f
+  bbox/U1769/ZN (OAI22D4BWP)                            0.0105     0.2382 r
+  bbox/U2890/S (FA1D4BWP)                               0.0450     0.2832 f
+  bbox/U2726/S (FA1D2BWP)                               0.0258     0.3090 r
+  bbox/U4161/CO (FA1D2BWP)                              0.0424     0.3514 r
+  bbox/U3337/S (FA1D2BWP)                               0.0392     0.3906 r
+  bbox/DP_OP_59J2_124_183/clk_r_REG1094_S4/D (EDFCNQD1BWP)
+                                                        0.0000     0.3906 r
+  data arrival time                                                0.3906
+
+  clock clk (rise edge)                                 0.3100     0.3100
+  clock network delay (ideal)                           0.0000     0.3100
+  bbox/DP_OP_59J2_124_183/clk_r_REG1094_S4/CP (EDFCNQD1BWP)
+                                                        0.0000     0.3100 r
+  library setup time                                   -0.0310     0.2790
+  data required time                                               0.2790
+  --------------------------------------------------------------------------
+  data required time                                               0.2790
+  data arrival time                                               -0.3906
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                -0.1116
+
+
+1
