@@ -68,9 +68,9 @@ SYNOPSYS_STARRC_DIR=/usr/class/ee/synopsys/starrc/F-2011.12-SP2/amd64_starrc
 SYNOPSYS_STARRC=/usr/class/ee/synopsys/starrc/F-2011.12-SP2
 SYNOPSYS_LICENSE=27000@cadlic0.stanford.edu
 SYNOPSYS=/usr/class/ee/synopsys/dc_shell/F-2011.09-SP4
-SSH_TTY=/dev/pts/27
-SSH_CONNECTION=128.12.163.106 53260 171.67.216.75 22
-SSH_CLIENT=128.12.163.106 53260 22
+SSH_TTY=/dev/pts/12
+SSH_CONNECTION=128.12.163.106 57148 171.67.216.95 22
+SSH_CLIENT=128.12.163.106 57148 22
 SPRINGSOFT_LICENSE=5219@cadlic0.stanford.edu
 SNPS_MAX_WAITTIME=7200
 SNPS_MAX_QUEUETIME=7200
@@ -98,16 +98,16 @@ MFLAGS=
 MANPATH_modshare=/usr/local/share/man:1:/usr/man:1:/usr/pubsw/man:1:/usr/class/ee/synopsys/dc_shell/F-2011.09-SP4/doc/snps_tcl/man:1:/usr/class/ee/synopsys/dc_shell/F-2011.09-SP4/doc/syn/man:1:/usr/class/ee/synopsys/vcs-mx/F-2011.12/doc/man:1:/usr/local/man:1:/usr/share/man:1:/usr/class/ee/synopsys/dc_shell/F-2011.09-SP4/doc/snps_gui/man:1
 MAKEOVERRIDES=${-*-command-variables-*-}
 MAKELEVEL=1
-MAKEFLAGS=RUN=+testname=/usr/class/ee271/project//vect//vec_271_01_sv.dat
+MAKEFLAGS=RUN=+testname=/usr/class/ee271/project//vect//vec_271_01_sv_short.dat
 LOADEDMODULES_modshare=starrc/F-2011.12-SP2:1:genesis2/latest:1:synopsys_pdk/2011:1:vcs-mx/F-2011.12:1:base/1.0:1:cx/F-2011.09-SP2:1:synopsys_edk/2011:1:cdesigner/F-2011.09-SP2:1:dc_shell/F-2011.09-SP4:1
 LOADEDMODULES=base/1.0:genesis2/latest:vcs-mx/F-2011.12:dc_shell/F-2011.09-SP4:synopsys_edk/2011:cdesigner/F-2011.09-SP2:starrc/F-2011.12-SP2:cx/F-2011.09-SP2:synopsys_pdk/2011
 LM_LICENSE_FILE_modshare=27000@cadlic0.stanford.edu:2
 LELAND_ENV=:ace:mail:news:
 LD_LIBRARY_PATH_modshare=/cad/common/Linux/x86_64/lib:1:/usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib:1
-KRB5CCNAME=FILE:/tmp/krb5cc_29115_lY7645
+KRB5CCNAME=FILE:/tmp/krb5cc_29115_Y26358
 HOSTTYPE=x86_64-linux
-HOSTNAME=corn10.stanford.edu
-HOST=corn10.stanford.edu
+HOSTNAME=corn30.stanford.edu
+HOST=corn30.stanford.edu
 HAVE_DESCR_LIMIT=
 GROUP=operator
 GENESIS_LIBS=/usr/class/ee/genesis2/r11012/PerlLibs
@@ -122,64 +122,64 @@ CADENCE_LICENSE=5280@cadlic0.stanford.edu
 0
 56
 1328923868 /usr/class/ee/synopsys/dc_shell/F-2011.09-SP4/dw/sim_ver/DW_pl_reg.v
-1354774981 genesis_verif/top_rast.v
-1354774981 genesis_verif/testbench_unq1.v
-1354774981 genesis_verif/perf_monitor_unq1.v
-1354774981 genesis_verif/dff3_unq8.v
-1354774981 genesis_verif/dff2_unq12.v
-1354774981 genesis_verif/dff_unq18.v
-1354774981 genesis_verif/smpl_cnt_sb_unq1.v
-1354774981 genesis_verif/dff_unq17.v
-1354774981 genesis_verif/dff2_unq11.v
-1354774981 genesis_verif/dff_unq16.v
-1354774981 genesis_verif/smpl_sb_unq1.v
-1354774981 genesis_verif/dff_unq15.v
-1354774981 genesis_verif/dff2_unq10.v
-1354774981 genesis_verif/dff3_unq7.v
-1354774981 genesis_verif/dff2_unq9.v
-1354774981 genesis_verif/dff_unq14.v
-1354774981 genesis_verif/bbx_sb_unq1.v
-1354774981 genesis_verif/dff_unq13.v
-1354774981 genesis_verif/dff_unq12.v
-1354774981 genesis_verif/dff3_unq6.v
-1354774980 genesis_verif/dff2_unq8.v
-1354774980 genesis_verif/dff_unq11.v
-1354774980 genesis_verif/zbuff_unq1.v
-1354774980 genesis_verif/rast_driver_unq1.v
-1354774980 genesis_verif/clocker_unq1.v
-1354774980 genesis_synth/rast.v
-1354774980 genesis_synth/sampletest_unq1.v
-1354774980 genesis_synth/dff_unq10.v
-1354774980 genesis_synth/dff2_unq7.v
-1354774980 genesis_synth/dff_unq9.v
-1354774980 genesis_synth/hash_jtree_unq1.v
-1354774980 genesis_synth/dff_unq8.v
-1354774980 genesis_synth/dff2_unq6.v
-1354774980 genesis_synth/dff3_unq5.v
-1354774980 genesis_synth/dff2_unq5.v
-1354774980 genesis_synth/dff_unq7.v
-1354774980 genesis_synth/tree_hash_unq1.v
-1354774980 genesis_synth/test_iterator_unq1.v
-1354774980 genesis_synth/dff_unq6.v
-1354774980 genesis_synth/dff_unq5.v
-1354774980 genesis_synth/bbox_unq1.v
-1354774980 genesis_synth/dff_unq4.v
-1354774980 genesis_synth/dff3_unq4.v
-1354774980 genesis_synth/dff2_unq4.v
-1354774980 genesis_synth/dff3_unq3.v
-1354774980 genesis_synth/dff2_unq3.v
-1354774980 genesis_synth/dff_unq3.v
-1354774980 genesis_synth/dff_unq2.v
-1354774980 genesis_synth/dff3_unq2.v
-1354774979 genesis_synth/dff2_unq2.v
-1354774979 genesis_synth/dff3_unq1.v
-1354774979 genesis_synth/dff2_unq1.v
-1354774979 genesis_synth/dff_unq1.v
-1354774981 genesis_vlog.vf
+1354856728 genesis_verif/top_rast.v
+1354856728 genesis_verif/testbench_unq1.v
+1354856728 genesis_verif/perf_monitor_unq1.v
+1354856728 genesis_verif/dff3_unq8.v
+1354856728 genesis_verif/dff2_unq12.v
+1354856728 genesis_verif/dff_unq18.v
+1354856727 genesis_verif/smpl_cnt_sb_unq1.v
+1354856727 genesis_verif/dff_unq17.v
+1354856727 genesis_verif/dff2_unq11.v
+1354856727 genesis_verif/dff_unq16.v
+1354856727 genesis_verif/smpl_sb_unq1.v
+1354856727 genesis_verif/dff_unq15.v
+1354856727 genesis_verif/dff2_unq10.v
+1354856727 genesis_verif/dff3_unq7.v
+1354856727 genesis_verif/dff2_unq9.v
+1354856727 genesis_verif/dff_unq14.v
+1354856727 genesis_verif/bbx_sb_unq1.v
+1354856727 genesis_verif/dff_unq13.v
+1354856727 genesis_verif/dff_unq12.v
+1354856727 genesis_verif/dff3_unq6.v
+1354856726 genesis_verif/dff2_unq8.v
+1354856726 genesis_verif/dff_unq11.v
+1354856726 genesis_verif/zbuff_unq1.v
+1354856726 genesis_verif/rast_driver_unq1.v
+1354856726 genesis_verif/clocker_unq1.v
+1354856726 genesis_synth/rast.v
+1354856726 genesis_synth/sampletest_unq1.v
+1354856726 genesis_synth/dff_unq10.v
+1354856726 genesis_synth/dff2_unq7.v
+1354856726 genesis_synth/dff_unq9.v
+1354856726 genesis_synth/hash_jtree_unq1.v
+1354856726 genesis_synth/dff_unq8.v
+1354856726 genesis_synth/dff2_unq6.v
+1354856726 genesis_synth/dff3_unq5.v
+1354856726 genesis_synth/dff2_unq5.v
+1354856726 genesis_synth/dff_unq7.v
+1354856726 genesis_synth/tree_hash_unq1.v
+1354856726 genesis_synth/test_iterator_unq1.v
+1354856726 genesis_synth/dff_unq6.v
+1354856726 genesis_synth/dff_unq5.v
+1354856725 genesis_synth/bbox_unq1.v
+1354856725 genesis_synth/dff_unq4.v
+1354856725 genesis_synth/dff3_unq4.v
+1354856725 genesis_synth/dff2_unq4.v
+1354856725 genesis_synth/dff3_unq3.v
+1354856725 genesis_synth/dff2_unq3.v
+1354856725 genesis_synth/dff_unq3.v
+1354856725 genesis_synth/dff_unq2.v
+1354856725 genesis_synth/dff3_unq2.v
+1354856725 genesis_synth/dff2_unq2.v
+1354856725 genesis_synth/dff3_unq1.v
+1354856725 genesis_synth/dff2_unq1.v
+1354856725 genesis_synth/dff_unq1.v
+1354856728 genesis_vlog.vf
 1322023114 /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/vcsdp.tab
 4
-1354774982 /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/gold/rastBBox_fix_sv.o
+1354856728 /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/gold/rastBBox_fix_sv.o
 1322023672 /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/libvirsim.so
 1322023397 /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/liberrorinf.so
 1322023255 /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/libsnpsmalloc.so
-1354774995 simv.daidir
+1354856733 simv.daidir
