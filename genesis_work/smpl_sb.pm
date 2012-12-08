@@ -26,9 +26,9 @@ sub get_OutfileSuffix {Genesis2::UniqueModule::private_to_me(); return ".v"};
       print STDERR "$self->{BaseModuleName}->to_verilog: Start user code\n" 
 	  if $self->{Debug} & 8;
       # <<< END PRE-GENERATED TO_VERILOG PREFIX CODE
-	$self->SUPER::to_verilog('/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/verif/smpl_sb.vp');
-# START USER CODE FROM /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/verif/smpl_sb.vp PARSED INTO PACKAGE >>>
-# line 1 "/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/verif/smpl_sb.vp"
+	$self->SUPER::to_verilog('/afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/verif/smpl_sb.vp');
+# START USER CODE FROM /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/verif/smpl_sb.vp PARSED INTO PACKAGE >>>
+# line 1 "/afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/verif/smpl_sb.vp"
 print { $self->{OutfileHandle} } '/*';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } ' * sampl_sb monitor';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } ' * ';print { $self->{OutfileHandle} } "\n"; 
@@ -245,7 +245,7 @@ print { $self->{OutfileHandle} } '/* Pipe Required Signals */';print { $self->{O
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } 'endmodule ';print { $self->{OutfileHandle} } "\n"; 
-# <<< END USER CODE FROM /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/verif/smpl_sb.vp PARSED INTO PACKAGE
+# <<< END USER CODE FROM /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/verif/smpl_sb.vp PARSED INTO PACKAGE
 
 
       # START PRE-GENERATED TO_VERILOG SUFFIX CODE >>>

@@ -12,7 +12,7 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/verif/rast_driver.vp
+//  Source file: /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/verif/rast_driver.vp
 //  Source template: rast_driver
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------

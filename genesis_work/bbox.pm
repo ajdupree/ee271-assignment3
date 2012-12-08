@@ -26,9 +26,9 @@ sub get_OutfileSuffix {Genesis2::UniqueModule::private_to_me(); return ".v"};
       print STDERR "$self->{BaseModuleName}->to_verilog: Start user code\n" 
 	  if $self->{Debug} & 8;
       # <<< END PRE-GENERATED TO_VERILOG PREFIX CODE
-	$self->SUPER::to_verilog('/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/rtl/bbox.vp');
-# START USER CODE FROM /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/rtl/bbox.vp PARSED INTO PACKAGE >>>
-# line 1 "/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/rtl/bbox.vp"
+	$self->SUPER::to_verilog('/afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/rtl/bbox.vp');
+# START USER CODE FROM /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/rtl/bbox.vp PARSED INTO PACKAGE >>>
+# line 1 "/afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/rtl/bbox.vp"
 print { $self->{OutfileHandle} } '/*';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } ' * Bounding Box Module';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } ' *     ';print { $self->{OutfileHandle} } "\n"; 
@@ -204,7 +204,7 @@ print { $self->{OutfileHandle} } '   logic 				validPoly_R13H_retime ;          
 print { $self->{OutfileHandle} } '   // output for retiming registers';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '	';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '	//logic for backface culling';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '  logic signed ['; print { $self->{OutfileHandle} } $sig_fig; print { $self->{OutfileHandle} } '-1:0] edges [1:0][1:0]; // two edges, two axes. edges 1-2 and 2-3';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '  logic signed ['; print { $self->{OutfileHandle} } $sig_fig; print { $self->{OutfileHandle} } '-5:0] edges [1:0][1:0]; // two edges, two axes. edges 1-2 and 2-3';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '	logic signed [47:0] z_crossproduct, z1, z2;	';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '	logic cull;';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '	//log for bubble smashing';print { $self->{OutfileHandle} } "\n"; 
@@ -213,12 +213,12 @@ print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n";
 print { $self->{OutfileHandle} } '	//Backface culling. Detect backward facing polygons, set valid_samp low';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '	 always_comb begin';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '	 	//v2 - v1';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '	 	edges[0][0] = poly_R10S[1][0] - poly_R10S[0][0]; //v2[x]-v1[x]';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '		edges[0][1] = poly_R10S[1][1] - poly_R10S[0][1]; //v2[y]-v1[y]';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '	 	edges[0][0] = poly_R10S[1][0]['; print { $self->{OutfileHandle} } $sig_fig; print { $self->{OutfileHandle} } '-5:0] - poly_R10S[0][0]['; print { $self->{OutfileHandle} } $sig_fig; print { $self->{OutfileHandle} } '-5:0]; //v2[x]-v1[x]';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '		edges[0][1] = poly_R10S[1][1]['; print { $self->{OutfileHandle} } $sig_fig; print { $self->{OutfileHandle} } '-5:0] - poly_R10S[0][1]['; print { $self->{OutfileHandle} } $sig_fig; print { $self->{OutfileHandle} } '-5:0]; //v2[y]-v1[y]';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '		//v3-v2';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '	 	edges[1][0] = poly_R10S[2][0] - poly_R10S[1][0]; //v3[x]-v2[x]';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '		edges[1][1] = poly_R10S[2][1] - poly_R10S[1][1]; //v3[y]-v2[y]';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '	 	edges[1][0] = poly_R10S[2][0]['; print { $self->{OutfileHandle} } $sig_fig; print { $self->{OutfileHandle} } '-5:0] - poly_R10S[1][0]['; print { $self->{OutfileHandle} } $sig_fig; print { $self->{OutfileHandle} } '-5:0]; //v3[x]-v2[x]';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '		edges[1][1] = poly_R10S[2][1]['; print { $self->{OutfileHandle} } $sig_fig; print { $self->{OutfileHandle} } '-5:0] - poly_R10S[1][1]['; print { $self->{OutfileHandle} } $sig_fig; print { $self->{OutfileHandle} } '-5:0]; //v3[y]-v2[y]';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '		z_crossproduct = (edges[0][0]*edges[1][1])-(edges[0][1]*edges[1][0]); //z output of cross product';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '		cull = (z_crossproduct > 0) ? 1\'b1 : 1\'b0; //z > 0 implies backfacing which means cull';print { $self->{OutfileHandle} } "\n"; 
@@ -549,7 +549,7 @@ print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n";
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
-# <<< END USER CODE FROM /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/rtl/bbox.vp PARSED INTO PACKAGE
+# <<< END USER CODE FROM /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/rtl/bbox.vp PARSED INTO PACKAGE
 
 
       # START PRE-GENERATED TO_VERILOG SUFFIX CODE >>>

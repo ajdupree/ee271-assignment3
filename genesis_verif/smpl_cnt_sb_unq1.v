@@ -12,7 +12,7 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/verif/smpl_cnt_sb.vp
+//  Source file: /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/verif/smpl_cnt_sb.vp
 //  Source template: smpl_cnt_sb
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------

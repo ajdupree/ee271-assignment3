@@ -12,7 +12,7 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/verif/top_rast.vp
+//  Source file: /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/verif/top_rast.vp
 //  Source template: top_rast
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------

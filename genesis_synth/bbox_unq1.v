@@ -12,7 +12,7 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/rtl/bbox.vp
+//  Source file: /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/rtl/bbox.vp
 //  Source template: bbox
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------
@@ -207,7 +207,7 @@ module bbox_unq1
    // output for retiming registers
 	
 	//logic for backface culling
-  logic signed [24-1:0] edges [1:0][1:0]; // two edges, two axes. edges 1-2 and 2-3
+  logic signed [24-5:0] edges [1:0][1:0]; // two edges, two axes. edges 1-2 and 2-3
 	logic signed [47:0] z_crossproduct, z1, z2;	
 	logic cull;
 	//log for bubble smashing
@@ -216,12 +216,12 @@ module bbox_unq1
 	//Backface culling. Detect backward facing polygons, set valid_samp low
 	 always_comb begin
 	 	//v2 - v1
-	 	edges[0][0] = poly_R10S[1][0] - poly_R10S[0][0]; //v2[x]-v1[x]
-		edges[0][1] = poly_R10S[1][1] - poly_R10S[0][1]; //v2[y]-v1[y]
+	 	edges[0][0] = poly_R10S[1][0][24-5:0] - poly_R10S[0][0][24-5:0]; //v2[x]-v1[x]
+		edges[0][1] = poly_R10S[1][1][24-5:0] - poly_R10S[0][1][24-5:0]; //v2[y]-v1[y]
 
 		//v3-v2
-	 	edges[1][0] = poly_R10S[2][0] - poly_R10S[1][0]; //v3[x]-v2[x]
-		edges[1][1] = poly_R10S[2][1] - poly_R10S[1][1]; //v3[y]-v2[y]
+	 	edges[1][0] = poly_R10S[2][0][24-5:0] - poly_R10S[1][0][24-5:0]; //v3[x]-v2[x]
+		edges[1][1] = poly_R10S[2][1][24-5:0] - poly_R10S[1][1][24-5:0]; //v3[y]-v2[y]
 
 		z_crossproduct = (edges[0][0]*edges[1][1])-(edges[0][1]*edges[1][0]); //z output of cross product
 		cull = (z_crossproduct > 0) ? 1'b1 : 1'b0; //z > 0 implies backfacing which means cull

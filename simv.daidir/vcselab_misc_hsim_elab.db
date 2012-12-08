@@ -1,5 +1,5 @@
 psSimBaseName                      	simv
-pDaiDir                            	/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/simv.daidir
+pDaiDir                            	/afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/simv.daidir
 destPath                           	csrc/
 hsMainFileCount                    	0
 hsMainFileName                     	dummy

@@ -26,9 +26,9 @@ sub get_OutfileSuffix {Genesis2::UniqueModule::private_to_me(); return ".v"};
       print STDERR "$self->{BaseModuleName}->to_verilog: Start user code\n" 
 	  if $self->{Debug} & 8;
       # <<< END PRE-GENERATED TO_VERILOG PREFIX CODE
-	$self->SUPER::to_verilog('/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/rtl/sampletest.vp');
-# START USER CODE FROM /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/rtl/sampletest.vp PARSED INTO PACKAGE >>>
-# line 1 "/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/rtl/sampletest.vp"
+	$self->SUPER::to_verilog('/afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/rtl/sampletest.vp');
+# START USER CODE FROM /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/rtl/sampletest.vp PARSED INTO PACKAGE >>>
+# line 1 "/afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/rtl/sampletest.vp"
 print { $self->{OutfileHandle} } '/*';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } ' *  Performs Sample Test on Micropolygon';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } ' * ';print { $self->{OutfileHandle} } "\n"; 
@@ -146,8 +146,8 @@ print { $self->{OutfileHandle} } '   logic 				 hit_valid_R18H_retime;   // Is h
 print { $self->{OutfileHandle} } '   // output for retiming registers	';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   // Signals in Access Order  ';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '   logic signed ['; print { $self->{OutfileHandle} } $sig_fig; print { $self->{OutfileHandle} } '-1:0] 	 poly_shift_R16S['; print { $self->{OutfileHandle} } $verts; print { $self->{OutfileHandle} } '-1:0][1:0]; // Micropolygon to Iterate Over    ';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '   logic signed ['; print { $self->{OutfileHandle} } $sig_fig; print { $self->{OutfileHandle} } '-1:0] 	 edge_R16S['; print { $self->{OutfileHandle} } $edges; print { $self->{OutfileHandle} } '-1:0][1:0][1:0]; //Edges ';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '   logic signed ['; print { $self->{OutfileHandle} } $sig_fig; print { $self->{OutfileHandle} } '-5:0] 	 poly_shift_R16S['; print { $self->{OutfileHandle} } $verts; print { $self->{OutfileHandle} } '-1:0][1:0]; // Micropolygon to Iterate Over    ';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '   logic signed ['; print { $self->{OutfileHandle} } $sig_fig; print { $self->{OutfileHandle} } '-5:0] 	 edge_R16S['; print { $self->{OutfileHandle} } $edges; print { $self->{OutfileHandle} } '-1:0][1:0][1:0]; //Edges ';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   logic signed [2*'; print { $self->{OutfileHandle} } $shortSF; print { $self->{OutfileHandle} } '-1:0] 	 dist_lg_R16S['; print { $self->{OutfileHandle} } $edges; print { $self->{OutfileHandle} } '-1:0];';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   logic signed ['; print { $self->{OutfileHandle} } $MRound; print { $self->{OutfileHandle} } '-1:0] 	 dist_R16S['; print { $self->{OutfileHandle} } $edges; print { $self->{OutfileHandle} } '-1:0];  ';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   logic ['; print { $self->{OutfileHandle} } $edges; print { $self->{OutfileHandle} } '-1:0] 		 edge_chk1_R16;';print { $self->{OutfileHandle} } "\n"; 
@@ -293,7 +293,7 @@ print { $self->{OutfileHandle} } 'endmodule';print { $self->{OutfileHandle} } "\
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
-# <<< END USER CODE FROM /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/rtl/sampletest.vp PARSED INTO PACKAGE
+# <<< END USER CODE FROM /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/rtl/sampletest.vp PARSED INTO PACKAGE
 
 
       # START PRE-GENERATED TO_VERILOG SUFFIX CODE >>>

@@ -12,7 +12,7 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/rtl/sampletest.vp
+//  Source file: /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/rtl/sampletest.vp
 //  Source template: sampletest
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------
@@ -144,8 +144,8 @@ module  sampletest_unq1
    // output for retiming registers	
    
    // Signals in Access Order  
-   logic signed [24-1:0] 	 poly_shift_R16S[3-1:0][1:0]; // Micropolygon to Iterate Over    
-   logic signed [24-1:0] 	 edge_R16S[3-1:0][1:0][1:0]; //Edges 
+   logic signed [24-5:0] 	 poly_shift_R16S[3-1:0][1:0]; // Micropolygon to Iterate Over    
+   logic signed [24-5:0] 	 edge_R16S[3-1:0][1:0][1:0]; //Edges 
    logic signed [2*24-1:0] 	 dist_lg_R16S[3-1:0];
    logic signed [38-1:0] 	 dist_R16S[3-1:0];  
    logic [3-1:0] 		 edge_chk1_R16;

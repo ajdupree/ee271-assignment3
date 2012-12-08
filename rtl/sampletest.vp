@@ -115,8 +115,8 @@ module  `mname()`
    // output for retiming registers	
    
    // Signals in Access Order  
-   logic signed [`$sig_fig`-1:0] 	 poly_shift_R16S[`$verts`-1:0][1:0]; // Micropolygon to Iterate Over    
-   logic signed [`$sig_fig`-1:0] 	 edge_R16S[`$edges`-1:0][1:0][1:0]; //Edges 
+   logic signed [`$sig_fig`-5:0] 	 poly_shift_R16S[`$verts`-1:0][1:0]; // Micropolygon to Iterate Over    
+   logic signed [`$sig_fig`-5:0] 	 edge_R16S[`$edges`-1:0][1:0][1:0]; //Edges 
    logic signed [2*`$shortSF`-1:0] 	 dist_lg_R16S[`$edges`-1:0];
    logic signed [`$MRound`-1:0] 	 dist_R16S[`$edges`-1:0];  
    logic [`$edges`-1:0] 		 edge_chk1_R16;
