@@ -24,7 +24,7 @@
 // Parameter Axis 	= 3
 // Parameter SigFig 	= 24
 // Parameter Colors 	= 3
-// Parameter PipelineDepth 	= 5
+// Parameter PipelineDepth 	= 3
 //
 //		---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
@@ -72,7 +72,7 @@
 //
 // Colors (_GENESIS2_INHERITANCE_PRIORITY_) = 3
 //
-// PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 5
+// PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 3
 //
 // Filename (_GENESIS2_INHERITANCE_PRIORITY_) = sb_log/bbx_sb.log
 //
@@ -219,17 +219,17 @@ module bbx_sb_unq1
    
 	dff3_unq6  d_01 (
 					 .in(poly_R10S) , 
-				     .clk(clk) , .reset(rst), .en(halt_RnnnnL),
+				     .clk(clk) , .reset(rst), .en(halt_RnnnnL | ~validPoly_R13H),
 				     .out(poly_RnnS));
 					 
 	dff_unq12  d_02 (
 					 .in({validPoly_R10H, isQuad_R10H}) , 
-				     .clk(clk) , .reset(rst), .en(halt_RnnnnL),
+				     .clk(clk) , .reset(rst), .en(halt_RnnnnL | ~validPoly_R13H),
 				     .out({validPoly_RnnH, isQuad_RnnH}));
 
 	dff_unq13  d_03 (
 					 .in(invalidate_R10H) , 
-				     .clk(clk) , .reset(rst), .en(halt_RnnnnL),
+				     .clk(clk) , .reset(rst), .en(halt_RnnnnL | ~validPoly_R13H),
 				     .out(invalidate_RnnH));
    
    always @(posedge clk) begin

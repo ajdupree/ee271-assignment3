@@ -164,7 +164,7 @@ print { $self->{OutfileHandle} } '   input logic 				isQuad_R10H , // Is Poly Qu
 print { $self->{OutfileHandle} } '   input logic 				validPoly_R10H , // Valid Data for Operation';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   //Control Signals';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '   input logic 				halt_RnnnnL , // Indicates No Work Should Be Done';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '   input logic 				halt_RnnnnL, // Indicates No Work Should Be Done';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   input logic signed ['; print { $self->{OutfileHandle} } $sig_fig; print { $self->{OutfileHandle} } '-1:0] 	screen_RnnnnS[1:0] , // Screen Dimensions';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   input logic [3:0] 			subSample_RnnnnU , // SubSample_Interval';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
@@ -207,27 +207,10 @@ print { $self->{OutfileHandle} } '	//logic for backface culling';print { $self->
 print { $self->{OutfileHandle} } '  logic signed ['; print { $self->{OutfileHandle} } $sig_fig; print { $self->{OutfileHandle} } '-1:0] edges [1:0][1:0]; // two edges, two axes. edges 1-2 and 2-3';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '	logic signed [47:0] z_crossproduct, z1, z2;	';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '	logic cull;';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '	logic outValidAndCull;';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '	//log for bubble smashing';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '	logic halt_smash;';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '	//logic for backface check';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
-    # if( $verts == 4 ) {
-print { $self->{OutfileHandle} } '   /* OLD QUAD CODE Used to be here */';print { $self->{OutfileHandle} } "\n"; 
-    # }
-print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '   /* Note to the bold!!! */';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '   /* You can actually process more than';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '    * 3 vertices if you really want.';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '    * You can even do more than 4.';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '    * If you are interested in building';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '    * a paramaterized implementation';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '    * to evaluate N-vertice draw calls,';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '    * talk with John B.';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '    * */';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
-    if( $verts == 3 ) {
-print { $self->{OutfileHandle} } '	';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '	 //Backface culling. Detect backward facing polygons, set valid_samp low';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '	//Backface culling. Detect backward facing polygons, set valid_samp low';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '	 always_comb begin';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '	 	//v2 - v1';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '	 	edges[0][0] = poly_R10S[1][0] - poly_R10S[0][0]; //v2[x]-v1[x]';print { $self->{OutfileHandle} } "\n"; 
@@ -239,10 +222,17 @@ print { $self->{OutfileHandle} } '		edges[1][1] = poly_R10S[2][1] - poly_R10S[1]
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '		z_crossproduct = (edges[0][0]*edges[1][1])-(edges[0][1]*edges[1][0]); //z output of cross product';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '		cull = (z_crossproduct > 0) ? 1\'b1 : 1\'b0; //z > 0 implies backfacing which means cull';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '	 end ';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '  /*	//v2 - v1';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '	 //Bubble smashing';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '	 /*Halt signal is logic LOW. So this combined signal should be LOW if we want it to halt.';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '		 As such, this signal will only halt the bbox if the halt signal is LOW ';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '		 AND the outvalid is HIGH. */';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '	 assign halt_smash = halt_RnnnnL | ~validPoly_R13H;';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
+    if( $verts == 3 ) {
+print { $self->{OutfileHandle} } '	';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '	   /*	//v2 - v1';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '	 	assign edges[0][0] = poly_R10S[1][0] - poly_R10S[0][0]; //v2[x]-v1[x]';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '		assign edges[0][1] = poly_R10S[1][1] - poly_R10S[0][1]; //v2[y]-v1[y]';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
@@ -442,9 +432,7 @@ print { $self->{OutfileHandle} } '			   clamp_R10H[1][1] ? screen_RnnnnS[1] : ro
 print { $self->{OutfileHandle} } '   end';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   //Select Between Screen Bounds and Rounded Bounds';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '   assign  outvalid_R10H = ~( | invalidate_R10H ) & validPoly_R10H;';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '	 assign outValidAndCull = outvalid_R10H && ~cull;';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '   assign  outvalid_R10H = ~( | invalidate_R10H ) & validPoly_R10H & ~cull;';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   //Flop Clamped Box to R13_retime with retiming registers';print { $self->{OutfileHandle} } "\n"; 
     my $d_bbx_r1 = generate( 'dff3', "d_bbx_r1", 
@@ -455,7 +443,7 @@ print { $self->{OutfileHandle} } '   //Flop Clamped Box to R13_retime with retim
                            Retime=>'YES' );
 print { $self->{OutfileHandle} } '   '; print { $self->{OutfileHandle} } $d_bbx_r1->instantiate(); print { $self->{OutfileHandle} } ' (';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '			       .in(poly_R10S) , ';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '			       .clk(clk) , .reset(rst), .en(halt_RnnnnL),';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '			       .clk(clk) , .reset(rst), .en(halt_smash),';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '			       .out(poly_R13S_retime));';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n"; 
     my $d_bbx_r2 = generate( 'dff2', "d_bbx_r2", 
@@ -465,7 +453,7 @@ print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n";
                            Retime=>'YES' );
 print { $self->{OutfileHandle} } '   '; print { $self->{OutfileHandle} } $d_bbx_r2->instantiate(); print { $self->{OutfileHandle} } '(';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '			      .in(color_R10U) , ';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '			      .clk(clk) , .reset(rst), .en(halt_RnnnnL),';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '			      .clk(clk) , .reset(rst), .en(halt_smash),';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '			      .out(color_R13U_retime));';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n"; 
     my $d_bbx_r3 = generate( 'dff3', "d_bbx_r3", 
@@ -476,7 +464,7 @@ print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n";
                            Retime=>'YES' );
 print { $self->{OutfileHandle} } '   '; print { $self->{OutfileHandle} } $d_bbx_r3->instantiate(); print { $self->{OutfileHandle} } ' (';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '			       .in(out_box_R10S) , ';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '			       .clk(clk) , .reset(rst), .en(halt_RnnnnL),';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '			       .clk(clk) , .reset(rst), .en(halt_smash),';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '			       .out(box_R13S_retime));';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n"; 
     my $d_bbx_r4 = generate( 'dff', "d_bbx_r4", 
@@ -484,8 +472,8 @@ print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n";
                            PipelineDepth=>$pipe_depth-1,
                            Retime=>'YES' );
 print { $self->{OutfileHandle} } '   '; print { $self->{OutfileHandle} } $d_bbx_r4->instantiate(); print { $self->{OutfileHandle} } '(';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '			      .in({isQuad_R10H, outValidAndCull}) , ';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '			      .clk(clk) , .reset(rst), .en(halt_RnnnnL),';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '			      .in({isQuad_R10H, outvalid_R10H}) , ';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '			      .clk(clk) , .reset(rst), .en(halt_smash),';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '			      .out({isQuad_R13H_retime, validPoly_R13H_retime}));';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   //Flop Clamped Box to R13_retime with retiming registers';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n"; 
@@ -500,7 +488,7 @@ print { $self->{OutfileHandle} } '   //Flop R13_retime to R13 with fixed registe
                            Retime=>'NO' );
 print { $self->{OutfileHandle} } '   '; print { $self->{OutfileHandle} } $d_bbx_f1->instantiate(); print { $self->{OutfileHandle} } ' (';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '			       .in(poly_R13S_retime) , ';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '			       .clk(clk) , .reset(rst), .en(halt_RnnnnL),';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '			       .clk(clk) , .reset(rst), .en(halt_smash),';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '			       .out(poly_R13S));';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n"; 
     my $d_bbx_f2 = generate( 'dff2', "d_bbx_f2", 
@@ -510,7 +498,7 @@ print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n";
                            Retime=>'NO' );
 print { $self->{OutfileHandle} } '   '; print { $self->{OutfileHandle} } $d_bbx_f2->instantiate(); print { $self->{OutfileHandle} } '(';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '			      .in(color_R13U_retime) , ';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '			      .clk(clk) , .reset(rst), .en(halt_RnnnnL),';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '			      .clk(clk) , .reset(rst), .en(halt_smash),';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '			      .out(color_R13U));';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n"; 
     my $d_bbx_f3 = generate( 'dff3', "d_bbx_f3", 
@@ -521,7 +509,7 @@ print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n";
                            Retime=>'NO' );
 print { $self->{OutfileHandle} } '   '; print { $self->{OutfileHandle} } $d_bbx_f3->instantiate(); print { $self->{OutfileHandle} } ' (';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '			       .in(box_R13S_retime) , ';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '			       .clk(clk) , .reset(rst), .en(halt_RnnnnL),';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '			       .clk(clk) , .reset(rst), .en(halt_smash),';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '			       .out(box_R13S));';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n"; 
     my $d_bbx_f4 = generate( 'dff', "d_bbx_f4", 
@@ -530,7 +518,7 @@ print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n";
                            Retime=>'NO' );
 print { $self->{OutfileHandle} } '   '; print { $self->{OutfileHandle} } $d_bbx_f4->instantiate(); print { $self->{OutfileHandle} } '(';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '			      .in({isQuad_R13H_retime, validPoly_R13H_retime}) , ';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '			      .clk(clk) , .reset(rst), .en(halt_RnnnnL),';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '			      .clk(clk) , .reset(rst), .en(halt_smash),';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '			      .out({isQuad_R13H, validPoly_R13H}));';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   //Flop R13_retime to R13 with fixed registers';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 

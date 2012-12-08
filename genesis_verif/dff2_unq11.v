@@ -19,7 +19,7 @@
 //
 //	From 'generate' statement (priority=5):
 // Parameter BitWidth 	= 24
-// Parameter ArraySize1 	= 2
+// Parameter ArraySize1 	= 3
 // Parameter Retime 	= NO
 // Parameter PipelineDepth 	= 5
 //
@@ -54,7 +54,7 @@
  * ***************************************************************************/
 // BitWidth (_GENESIS2_INHERITANCE_PRIORITY_) = 24
 //
-// ArraySize1 (_GENESIS2_INHERITANCE_PRIORITY_) = 2
+// ArraySize1 (_GENESIS2_INHERITANCE_PRIORITY_) = 3
 //
 // PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 5
 //
@@ -62,18 +62,22 @@
 //
 
 module dff2_unq11 (
-		input logic [23:0]  in[1:0], 
+		input logic [23:0]  in[2:0], 
 		input logic 		       clk, reset, en, 
-		output logic [23:0] out[1:0]
+		output logic [23:0] out[2:0]
 		);	
    
-   dff_unq11  dff_0 
+   dff_unq17  dff_0 
      (.in(in[0]) , 
       .clk(clk) , .reset(reset), .en(en),
       .out(out[0]));
-   dff_unq11  dff_1 
+   dff_unq17  dff_1 
      (.in(in[1]) , 
       .clk(clk) , .reset(reset), .en(en),
       .out(out[1]));
+   dff_unq17  dff_2 
+     (.in(in[2]) , 
+      .clk(clk) , .reset(reset), .en(en),
+      .out(out[2]));
    
 endmodule 

@@ -108,7 +108,7 @@
 //
 // PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 1
 //
-// ModifiedFSM (_GENESIS2_DECLARATION_PRIORITY_) = NO
+// ModifiedFSM (_GENESIS2_DECLARATION_PRIORITY_) = YES
 //
 
 /* A Note on Signal Names:
@@ -192,22 +192,22 @@ module test_iterator_unq1
   
    
    //////
-   //////  RTL code for original FSM Goes Here
+   //////  RTL code for modified FSM Goes Here
    //////
    
-   // To build this FSM we want to have two more state: one is the working
-   // status of this FSM, and the other is the current bounding box where
-   // we iterate sample points
-	
-   // defin two more states, box_R14S and state_R14H
-   logic signed [24-1:0] 	box_R14S[1:0][1:0];    		// the state for current bounding box
-   logic signed [24-1:0] 	next_box_R14S[1:0][1:0];
-   typedef enum logic {
-		       WAIT_STATE, TEST_STATE
-		       } state_t;  
-   state_t                        state_R14H;     //State Designation (Waiting or Testing)
-   state_t                        next_state_R14H;        //Next Cycles State 
+   ////// PLACE YOUR CODE HERE 
    
+   
+   // defin two more states, box_R14S and state_R14H
+   logic signed [24-1:0] 	box_R14S[1:0][1:0];
+   logic signed [24-1:0] 	next_box_R14S[1:0][1:0];
+    typedef enum 			logic {
+					       LAST_SAMP, NORM_SAMP
+					       } state_t;  
+   state_t                        state_R14H;     //State Designation (Waiting or Testing)
+   state_t                        next_state_R14H;        //Next Cycles State
+	
+	
 	// instantiate registers for storing these two states
    dff3_unq4  d305 (
 			   .in(next_box_R14S) , 
@@ -219,77 +219,78 @@ module test_iterator_unq1
 			   .in(next_state_R14H) , 
 			   .clk(clk) , .reset(rst), .en(1'b1),
 			   .out(state_R14H));
-   
-   
+	
+	
 	// define some helper signals
    logic signed [24-1:0] 	next_up_samp_R14S[1:0]; //If jump up, next sample
    logic signed [24-1:0] 	next_rt_samp_R14S[1:0]; //If jump right, next sample
    logic 				at_right_edg_R14H;      //Current sample at right edge?
    logic 				at_top_edg_R14H;        //Current sample at top edge?
    logic 				at_end_box_R14H;        //Cur samp at end
+   logic 				next_at_end_R14H;
    
    
-   ////// PLACE YOUR CODE HERE 
-   
+   // calculation the values of helper signals
+   assign   next_at_end_R14H = next_sample_R14S[1] == next_box_R14S[1][1] 
+     & next_sample_R14S[0] == next_box_R14S[1][0];
    
    //Current Sample location at Top Edge?
-   assign at_top_edg_R14H =  sample_R14S[1] == box_R14S[1][1];
+   assign  at_top_edg_R14H =  sample_R14S[1] == box_R14S[1][1];
    
    //Current Sample location at Right Edge?
    assign  at_right_edg_R14H = sample_R14S[0] == box_R14S[1][0];
 
-   //At End of Box
-   assign  at_end_box_R14H = at_top_edg_R14H & at_right_edg_R14H;
-
    
    //Calculate The Sample to the Right of the Current Sample
-   assign next_rt_samp_R14S[0][10-4:0] = '0;
-   assign next_rt_samp_R14S[0][24-1:10-3] = sample_R14S[0][24-1:10-3]
+   assign  next_rt_samp_R14S[0][10-4:0] = '0;
+   assign  next_rt_samp_R14S[0][24-1:10-3] = sample_R14S[0][24-1:10-3]
      +  { '0 , subSample_RnnnnU } ; // X-Val is Increment
    assign  next_rt_samp_R14S[1] = sample_R14S[1] ; // Y-val is same
 
    //Calculate the Sample that is The Up Iteration
-   assign next_up_samp_R14S[0] = box_R14S[0][0] ; //X-Val is left bbox edge
-   assign  next_up_samp_R14S[1][10-4:0] = '0; 
+   assign  next_up_samp_R14S[0] = box_R14S[0][0] ; //X-Val is left bbox edge
+   assign next_up_samp_R14S[1][10-4:0] = '0; 
    assign  next_up_samp_R14S[1][24-1:10-3] = sample_R14S[1][24-1:10-3]
      +  { '0 , subSample_RnnnnU } ; // Y-Val is Increment      
-
-
-
+  
+   
    //State Machine Control
-   always_comb begin
+   always_comb begin 
+    
       unique case( state_R14H )
-        ( WAIT_STATE ): begin
-	   next_sample_R14S    = box_R13S[0];  
-	   next_validSamp_R14H = validPoly_R13H ;
-	   next_isQuad_R14H    = isQuad_R13H;
-	   next_state_R14H     = validPoly_R13H ? TEST_STATE 
-				 : WAIT_STATE;
+        ( LAST_SAMP ): begin
+	   next_sample_R14S    = box_R13S[0] ;  
+	   next_state_R14H     = validPoly_R13H & ~next_at_end_R14H ? NORM_SAMP 
+				 : LAST_SAMP;
 	   next_poly_R14S      = poly_R13S ;
 	   next_color_R14U     = color_R13U ;
 	   next_box_R14S       = box_R13S ;
-	   next_halt_RnnnnL    = ~validPoly_R13H ; // halt for new uPoly
+	   next_halt_RnnnnL    = ~(validPoly_R13H & ~next_at_end_R14H); // halt for new uPoly
+	   next_validSamp_R14H = validPoly_R13H ;
+	   next_isQuad_R14H    = isQuad_R13H;
 	end
-	( TEST_STATE ): begin
+	( NORM_SAMP ): begin 
+	   // current sample point is not the last one, 
+	   // so next one is always in the same box and valid
 	   next_sample_R14S    =  at_right_edg_R14H ?  next_up_samp_R14S 
 				  : next_rt_samp_R14S ;  
-	   next_validSamp_R14H =  ~at_end_box_R14H ; 
-	   next_isQuad_R14H    =   isQuad_R14H ;
-	   next_state_R14H     =   at_end_box_R14H ? WAIT_STATE 
-				   : TEST_STATE ;
-	   next_poly_R14S      =   poly_R14S ;
-	   next_color_R14U     =   color_R14U ;
-	   next_box_R14S       =   box_R14S ; 
-	   next_halt_RnnnnL    =   at_end_box_R14H  ; //unHalt when done
+	   next_state_R14H     =  next_at_end_R14H ? LAST_SAMP : NORM_SAMP ;
+	   next_poly_R14S      =  poly_R14S ;
+	   next_color_R14U     =  color_R14U ;
+	   next_box_R14S       =  box_R14S ; 
+	   next_halt_RnnnnL    =  next_at_end_R14H; 
+	   next_validSamp_R14H =  1'b1 ; 
+	   next_isQuad_R14H    =  isQuad_R14H ;
 	end      
       endcase // case ( state_R14H )
       
    end //always_comb
-   
+
    
    //////
-   //////  RTL code for original FSM Goes Here
+   //////  RTL code for modified FSM Goes Here
    //////
+   
    
 
    

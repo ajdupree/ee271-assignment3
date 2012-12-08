@@ -231,7 +231,7 @@ print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n";
 	                        Retime=>'NO' );
 print { $self->{OutfileHandle} } '	'; print { $self->{OutfileHandle} } $d_01->instantiate(); print { $self->{OutfileHandle} } ' (';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '					 .in(poly_R10S) , ';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '				     .clk(clk) , .reset(rst), .en(halt_RnnnnL),';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '				     .clk(clk) , .reset(rst), .en(halt_RnnnnL | ~validPoly_R13H),';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '				     .out(poly_RnnS));';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '					 ';print { $self->{OutfileHandle} } "\n"; 
 	 my $d_02 = generate( 'dff', "d_02", 
@@ -240,7 +240,7 @@ print { $self->{OutfileHandle} } '					 ';print { $self->{OutfileHandle} } "\n";
 	                        Retime=>'NO' );
 print { $self->{OutfileHandle} } '	'; print { $self->{OutfileHandle} } $d_02->instantiate(); print { $self->{OutfileHandle} } ' (';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '					 .in({validPoly_R10H, isQuad_R10H}) , ';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '				     .clk(clk) , .reset(rst), .en(halt_RnnnnL),';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '				     .clk(clk) , .reset(rst), .en(halt_RnnnnL | ~validPoly_R13H),';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '				     .out({validPoly_RnnH, isQuad_RnnH}));';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
       	 my $d_03 = generate( 'dff', "d_03", 
@@ -249,7 +249,7 @@ print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n";
 	                        Retime=>'NO' );
 print { $self->{OutfileHandle} } '	'; print { $self->{OutfileHandle} } $d_03->instantiate(); print { $self->{OutfileHandle} } ' (';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '					 .in(invalidate_R10H) , ';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '				     .clk(clk) , .reset(rst), .en(halt_RnnnnL),';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '				     .clk(clk) , .reset(rst), .en(halt_RnnnnL | ~validPoly_R13H),';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '				     .out(invalidate_RnnH));';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '   always @(posedge clk) begin';print { $self->{OutfileHandle} } "\n"; 

@@ -79,7 +79,7 @@ print { $self->{OutfileHandle} } ' * *******************************************
                             Val=>3, Min=>1, Step=>1, 
                             Doc=>"Number of color channels");
  my $pipes_box  = parameter(Name=>'PipesBox',
-                            Val=>5, Min=>1, Step=>1, 
+                            Val=>3, Min=>1, Step=>1, 
                             Doc=>"Number of Pipe Stages in bbox module");
  my $pipes_iter = parameter(Name=>'PipesIter',
                             Val=>1, Min=>1, Step=>1, 

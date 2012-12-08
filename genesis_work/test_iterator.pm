@@ -106,7 +106,7 @@ print { $self->{OutfileHandle} } ' * *******************************************
                             Val=>1, Min=>1, Max=>1, Step=>1, 
                             Doc=>"How many pipe stages are in this block");
  my $mod_FSM = parameter(Name=>'ModifiedFSM',
-                            Val=>'NO', List=>['YES', 'NO'],
+                            Val=>'YES', List=>['YES', 'NO'],
                             Doc=>"Use Modified FSM to eliminate a wait state");
 
  # Convert a Fixed Point Number to a Floating

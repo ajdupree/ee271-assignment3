@@ -80,6 +80,7 @@ module `mname()`
 
      // Input Control Signals (from DUT outputs)
      input logic                       halt_RnnnnL,
+		 input logic											 poly_R13S,
  
      // Input Signals (from DUT outputs)
      input logic signed   [`$sig_fig`-1:0] hit_R18S[`$axis`-1:0],       // Hit Location
@@ -115,7 +116,9 @@ module `mname()`
    `$rast_driver -> instantiate()` (
       .halt_RnnnnL(`$dut_obj->get_instance_path()`.halt_RnnnnL) ,  // Input:  Indicates No Work Should Be Done
 
-      .poly_R10S(poly_R10S) ,                // Output: 4 Sets X,Y Fixed Point Values
+      .validPoly_R13H(`$dut_obj->get_instance_path()`.validPoly_R13H) ,  // Input: indicates state of BBox output 
+
+			.poly_R10S(poly_R10S) ,                // Output: 4 Sets X,Y Fixed Point Values
       .isQuad_R10H(isQuad_R10H)  ,           // Output: Is Poly Quad?
       .color_R10U(color_R10U) ,              // Output: Color of Polygon
       .validPoly_R10H(validPoly_R10H),       // Output: Valid Data for Operation
@@ -263,6 +266,7 @@ module `mname()`
 	//;                        Colors=>$colors,
 	//;                        PipelineDepth=>$delay_r2z_mon);
    `$perf_mon -> instantiate()` (
+			 .poly_R10S(`$dut_obj->get_instance_path()`.poly_R10S),           // 
 	 		 .poly_R16S(`$dut_obj->get_instance_path()`.poly_R16S),           // 4 Sets X,Y Fixed Point Values
 			 .color_R16U(`$dut_obj->get_instance_path()`.color_R16U),         // Polygon Color
 			 .isQuad_R16H(`$dut_obj->get_instance_path()`.isQuad_R16H),       // Is Poly Quad?

@@ -78,6 +78,8 @@
 
 module perf_monitor_unq1 
 (
+  input logic signed   [24-1:0]  poly_R10S[3-1:0][3-1:0],  // 4 Sets X,Y Fixed Point Values
+
   input logic signed   [24-1:0]  poly_R16S[3-1:0][3-1:0],  // 4 Sets X,Y Fixed Point Values
   input logic unsigned [24-1:0]  color_R16U[3-1:0],          // 4 Sets X,Y Fixed Point Values
   input logic                        isQuad_R16H,                     // Is Poly Quad?
@@ -101,12 +103,12 @@ module perf_monitor_unq1
 
  
 	dff3_unq7  d_01 (
-					 .in(poly_R16S) , 
+					 .in(poly_R10S) , 
 				     .clk(clk) , .reset(rst), .en(1'b1),
 				     .out(poly_RnnS));
 
-	dff3_unq8  d_011 (
-					 .in(poly_R16S) , 
+	dff3_unq6  d_011 (
+					 .in(poly_R10S) , 
 				     .clk(clk) , .reset(rst), .en(1'b1),
 				     .out(poly_Rn1S));
 					 			 

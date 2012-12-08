@@ -19,7 +19,7 @@
 //
 //	From 'generate' statement (priority=5):
 // Parameter Radix 	= 10
-// Parameter PipesBox 	= 5
+// Parameter PipesBox 	= 3
 // Parameter Axis 	= 3
 // Parameter DUT_obj 	= Data structure of type rast
 // Parameter PipesIter 	= 1
@@ -73,7 +73,7 @@
 //
 // Colors (_GENESIS2_INHERITANCE_PRIORITY_) = 3
 //
-// PipesBox (_GENESIS2_INHERITANCE_PRIORITY_) = 5
+// PipesBox (_GENESIS2_INHERITANCE_PRIORITY_) = 3
 //
 // PipesIter (_GENESIS2_INHERITANCE_PRIORITY_) = 1
 //
@@ -109,6 +109,7 @@ module testbench_unq1
 
      // Input Control Signals (from DUT outputs)
      input logic                       halt_RnnnnL,
+		 input logic											 poly_R13S,
  
      // Input Signals (from DUT outputs)
      input logic signed   [24-1:0] hit_R18S[3-1:0],       // Hit Location
@@ -138,7 +139,9 @@ module testbench_unq1
    rast_driver_unq1  rast_driver (
       .halt_RnnnnL(top_rast.rast.halt_RnnnnL) ,  // Input:  Indicates No Work Should Be Done
 
-      .poly_R10S(poly_R10S) ,                // Output: 4 Sets X,Y Fixed Point Values
+      .validPoly_R13H(top_rast.rast.validPoly_R13H) ,  // Input: indicates state of BBox output 
+
+			.poly_R10S(poly_R10S) ,                // Output: 4 Sets X,Y Fixed Point Values
       .isQuad_R10H(isQuad_R10H)  ,           // Output: Is Poly Quad?
       .color_R10U(color_R10U) ,              // Output: Color of Polygon
       .validPoly_R10H(validPoly_R10H),       // Output: Valid Data for Operation
@@ -248,6 +251,7 @@ module testbench_unq1
    *****************************************/
    
    perf_monitor_unq1  perf_mon (
+			 .poly_R10S(top_rast.rast.poly_R10S),           // 
 	 		 .poly_R16S(top_rast.rast.poly_R16S),           // 4 Sets X,Y Fixed Point Values
 			 .color_R16U(top_rast.rast.color_R16U),         // Polygon Color
 			 .isQuad_R16H(top_rast.rast.isQuad_R16H),       // Is Poly Quad?

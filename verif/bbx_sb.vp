@@ -200,7 +200,7 @@ module `mname()`
 	//;                        Retime=>'NO' );
 	`$d_01->instantiate()` (
 					 .in(poly_R10S) , 
-				     .clk(clk) , .reset(rst), .en(halt_RnnnnL),
+				     .clk(clk) , .reset(rst), .en(halt_RnnnnL | ~validPoly_R13H),
 				     .out(poly_RnnS));
 					 
 	//; my $d_02 = generate( 'dff', "d_02", 
@@ -209,7 +209,7 @@ module `mname()`
 	//;                        Retime=>'NO' );
 	`$d_02->instantiate()` (
 					 .in({validPoly_R10H, isQuad_R10H}) , 
-				     .clk(clk) , .reset(rst), .en(halt_RnnnnL),
+				     .clk(clk) , .reset(rst), .en(halt_RnnnnL | ~validPoly_R13H),
 				     .out({validPoly_RnnH, isQuad_RnnH}));
 
       	//; my $d_03 = generate( 'dff', "d_03", 
@@ -218,7 +218,7 @@ module `mname()`
 	//;                        Retime=>'NO' );
 	`$d_03->instantiate()` (
 					 .in(invalidate_R10H) , 
-				     .clk(clk) , .reset(rst), .en(halt_RnnnnL),
+				     .clk(clk) , .reset(rst), .en(halt_RnnnnL | ~validPoly_R13H),
 				     .out(invalidate_RnnH));
    
    always @(posedge clk) begin

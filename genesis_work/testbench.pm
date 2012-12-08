@@ -111,6 +111,7 @@ print { $self->{OutfileHandle} } '     output logic                        rst, 
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '     // Input Control Signals (from DUT outputs)';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '     input logic                       halt_RnnnnL,';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '		 input logic											 poly_R13S,';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } ' ';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '     // Input Signals (from DUT outputs)';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '     input logic signed   ['; print { $self->{OutfileHandle} } $sig_fig; print { $self->{OutfileHandle} } '-1:0] hit_R18S['; print { $self->{OutfileHandle} } $axis; print { $self->{OutfileHandle} } '-1:0],       // Hit Location';print { $self->{OutfileHandle} } "\n"; 
@@ -146,7 +147,9 @@ print { $self->{OutfileHandle} } '   //probably need to fix....';print { $self->
 print { $self->{OutfileHandle} } '   '; print { $self->{OutfileHandle} } $rast_driver -> instantiate(); print { $self->{OutfileHandle} } ' (';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '      .halt_RnnnnL('; print { $self->{OutfileHandle} } $dut_obj->get_instance_path(); print { $self->{OutfileHandle} } '.halt_RnnnnL) ,  // Input:  Indicates No Work Should Be Done';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '      .poly_R10S(poly_R10S) ,                // Output: 4 Sets X,Y Fixed Point Values';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '      .validPoly_R13H('; print { $self->{OutfileHandle} } $dut_obj->get_instance_path(); print { $self->{OutfileHandle} } '.validPoly_R13H) ,  // Input: indicates state of BBox output ';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '			.poly_R10S(poly_R10S) ,                // Output: 4 Sets X,Y Fixed Point Values';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '      .isQuad_R10H(isQuad_R10H)  ,           // Output: Is Poly Quad?';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '      .color_R10U(color_R10U) ,              // Output: Color of Polygon';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '      .validPoly_R10H(validPoly_R10H),       // Output: Valid Data for Operation';print { $self->{OutfileHandle} } "\n"; 
@@ -294,6 +297,7 @@ print { $self->{OutfileHandle} } '   ';print { $self->{OutfileHandle} } "\n";
 	                        Colors=>$colors,
 	                        PipelineDepth=>$delay_r2z_mon);
 print { $self->{OutfileHandle} } '   '; print { $self->{OutfileHandle} } $perf_mon -> instantiate(); print { $self->{OutfileHandle} } ' (';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '			 .poly_R10S('; print { $self->{OutfileHandle} } $dut_obj->get_instance_path(); print { $self->{OutfileHandle} } '.poly_R10S),           // ';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '	 		 .poly_R16S('; print { $self->{OutfileHandle} } $dut_obj->get_instance_path(); print { $self->{OutfileHandle} } '.poly_R16S),           // 4 Sets X,Y Fixed Point Values';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '			 .color_R16U('; print { $self->{OutfileHandle} } $dut_obj->get_instance_path(); print { $self->{OutfileHandle} } '.color_R16U),         // Polygon Color';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '			 .isQuad_R16H('; print { $self->{OutfileHandle} } $dut_obj->get_instance_path(); print { $self->{OutfileHandle} } '.isQuad_R16H),       // Is Poly Quad?';print { $self->{OutfileHandle} } "\n"; 

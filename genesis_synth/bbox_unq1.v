@@ -23,7 +23,7 @@
 // Parameter Axis 	= 3
 // Parameter SigFig 	= 24
 // Parameter Colors 	= 3
-// Parameter PipelineDepth 	= 5
+// Parameter PipelineDepth 	= 3
 //
 //		---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
@@ -153,7 +153,7 @@
 //
 // Colors (_GENESIS2_INHERITANCE_PRIORITY_) = 3
 //
-// PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 5
+// PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 3
 //
 
 
@@ -167,7 +167,7 @@ module bbox_unq1
    input logic 				validPoly_R10H , // Valid Data for Operation
 
    //Control Signals
-   input logic 				halt_RnnnnL , // Indicates No Work Should Be Done
+   input logic 				halt_RnnnnL, // Indicates No Work Should Be Done
    input logic signed [24-1:0] 	screen_RnnnnS[1:0] , // Screen Dimensions
    input logic [3:0] 			subSample_RnnnnU , // SubSample_Interval
 
@@ -210,24 +210,10 @@ module bbox_unq1
   logic signed [24-1:0] edges [1:0][1:0]; // two edges, two axes. edges 1-2 and 2-3
 	logic signed [47:0] z_crossproduct, z1, z2;	
 	logic cull;
-	logic outValidAndCull;
+	//log for bubble smashing
+	logic halt_smash;
    
-	//logic for backface check
-
-   /* OLD QUAD CODE Used to be here */
-   
-   /* Note to the bold!!! */
-   /* You can actually process more than
-    * 3 vertices if you really want.
-    * You can even do more than 4.
-    * If you are interested in building
-    * a paramaterized implementation
-    * to evaluate N-vertice draw calls,
-    * talk with John B.
-    * */
-
-	
-	 //Backface culling. Detect backward facing polygons, set valid_samp low
+	//Backface culling. Detect backward facing polygons, set valid_samp low
 	 always_comb begin
 	 	//v2 - v1
 	 	edges[0][0] = poly_R10S[1][0] - poly_R10S[0][0]; //v2[x]-v1[x]
@@ -239,10 +225,16 @@ module bbox_unq1
 
 		z_crossproduct = (edges[0][0]*edges[1][1])-(edges[0][1]*edges[1][0]); //z output of cross product
 		cull = (z_crossproduct > 0) ? 1'b1 : 1'b0; //z > 0 implies backfacing which means cull
-
 	 end 
 
-  /*	//v2 - v1
+	 //Bubble smashing
+	 /*Halt signal is logic LOW. So this combined signal should be LOW if we want it to halt.
+		 As such, this signal will only halt the bbox if the halt signal is LOW 
+		 AND the outvalid is HIGH. */
+	 assign halt_smash = halt_RnnnnL | ~validPoly_R13H;
+
+	
+	   /*	//v2 - v1
 	 	assign edges[0][0] = poly_R10S[1][0] - poly_R10S[0][0]; //v2[x]-v1[x]
 		assign edges[0][1] = poly_R10S[1][1] - poly_R10S[0][1]; //v2[y]-v1[y]
 
@@ -530,29 +522,27 @@ module bbox_unq1
    end
    //Select Between Screen Bounds and Rounded Bounds
    
-   assign  outvalid_R10H = ~( | invalidate_R10H ) & validPoly_R10H;
-	 assign outValidAndCull = outvalid_R10H && ~cull;
-
+   assign  outvalid_R10H = ~( | invalidate_R10H ) & validPoly_R10H & ~cull;
    
    //Flop Clamped Box to R13_retime with retiming registers
    dff3_unq1  d_bbx_r1 (
 			       .in(poly_R10S) , 
-			       .clk(clk) , .reset(rst), .en(halt_RnnnnL),
+			       .clk(clk) , .reset(rst), .en(halt_smash),
 			       .out(poly_R13S_retime));
    
    dff2_unq1  d_bbx_r2(
 			      .in(color_R10U) , 
-			      .clk(clk) , .reset(rst), .en(halt_RnnnnL),
+			      .clk(clk) , .reset(rst), .en(halt_smash),
 			      .out(color_R13U_retime));
    
    dff3_unq2  d_bbx_r3 (
 			       .in(out_box_R10S) , 
-			       .clk(clk) , .reset(rst), .en(halt_RnnnnL),
+			       .clk(clk) , .reset(rst), .en(halt_smash),
 			       .out(box_R13S_retime));
    
    dff_unq2  d_bbx_r4(
-			      .in({isQuad_R10H, outValidAndCull}) , 
-			      .clk(clk) , .reset(rst), .en(halt_RnnnnL),
+			      .in({isQuad_R10H, outvalid_R10H}) , 
+			      .clk(clk) , .reset(rst), .en(halt_smash),
 			      .out({isQuad_R13H_retime, validPoly_R13H_retime}));
    //Flop Clamped Box to R13_retime with retiming registers
    
@@ -561,22 +551,22 @@ module bbox_unq1
    //Flop R13_retime to R13 with fixed registers
    dff3_unq3  d_bbx_f1 (
 			       .in(poly_R13S_retime) , 
-			       .clk(clk) , .reset(rst), .en(halt_RnnnnL),
+			       .clk(clk) , .reset(rst), .en(halt_smash),
 			       .out(poly_R13S));
    
    dff2_unq3  d_bbx_f2(
 			      .in(color_R13U_retime) , 
-			      .clk(clk) , .reset(rst), .en(halt_RnnnnL),
+			      .clk(clk) , .reset(rst), .en(halt_smash),
 			      .out(color_R13U));
    
    dff3_unq4  d_bbx_f3 (
 			       .in(box_R13S_retime) , 
-			       .clk(clk) , .reset(rst), .en(halt_RnnnnL),
+			       .clk(clk) , .reset(rst), .en(halt_smash),
 			       .out(box_R13S));
    
    dff_unq4  d_bbx_f4(
 			      .in({isQuad_R13H_retime, validPoly_R13H_retime}) , 
-			      .clk(clk) , .reset(rst), .en(halt_RnnnnL),
+			      .clk(clk) , .reset(rst), .en(halt_smash),
 			      .out({isQuad_R13H, validPoly_R13H}));
    //Flop R13_retime to R13 with fixed registers
 

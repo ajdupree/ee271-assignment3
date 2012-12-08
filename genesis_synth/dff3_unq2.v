@@ -22,7 +22,7 @@
 // Parameter BitWidth 	= 24
 // Parameter ArraySize1 	= 2
 // Parameter Retime 	= YES
-// Parameter PipelineDepth 	= 4
+// Parameter PipelineDepth 	= 2
 //
 //		---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
@@ -59,7 +59,7 @@
 //
 // ArraySize2 (_GENESIS2_INHERITANCE_PRIORITY_) = 2
 //
-// PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 4
+// PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 2
 //
 // Retime (_GENESIS2_INHERITANCE_PRIORITY_) = YES
 //

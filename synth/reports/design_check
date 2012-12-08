@@ -2,34 +2,24 @@
 ****************************************
 check_design summary:
 Version:     F-2011.09-SP4
-Date:        Wed Dec  5 16:17:02 2012
+Date:        Fri Dec  7 10:27:12 2012
 ****************************************
 
                    Name                                            Total
 --------------------------------------------------------------------------------
-Inputs/Outputs                                                    235
-    Unconnected ports (LINT-28)                                   222
+Inputs/Outputs                                                    234
+    Unconnected ports (LINT-28)                                   221
     Shorted outputs (LINT-31)                                       9
     Constant outputs (LINT-52)                                      4
 
-Cells                                                              21
-    Cells do not drive (LINT-1)                                    13
+Cells                                                              11
+    Cells do not drive (LINT-1)                                     3
     Nets connected to multiple pins on same cell (LINT-33)          8
 --------------------------------------------------------------------------------
 
-Warning: In design 'bbox_unq1', cell 'U3531' does not drive any nets. (LINT-1)
-Warning: In design 'bbox_unq1', cell 'U4594' does not drive any nets. (LINT-1)
-Warning: In design 'bbox_unq1', cell 'U6062' does not drive any nets. (LINT-1)
-Warning: In design 'sampletest_unq1', cell 'U4417' does not drive any nets. (LINT-1)
-Warning: In design 'sampletest_unq1', cell 'U4487' does not drive any nets. (LINT-1)
-Warning: In design 'sampletest_unq1', cell 'U4496' does not drive any nets. (LINT-1)
-Warning: In design 'sampletest_unq1', cell 'U4499' does not drive any nets. (LINT-1)
-Warning: In design 'sampletest_unq1', cell 'U4555' does not drive any nets. (LINT-1)
-Warning: In design 'sampletest_unq1', cell 'U4556' does not drive any nets. (LINT-1)
-Warning: In design 'sampletest_unq1', cell 'U4557' does not drive any nets. (LINT-1)
-Warning: In design 'sampletest_unq1', cell 'U4911' does not drive any nets. (LINT-1)
-Warning: In design 'sampletest_unq1', cell 'U5489' does not drive any nets. (LINT-1)
-Warning: In design 'sampletest_unq1', cell 'U5497' does not drive any nets. (LINT-1)
+Warning: In design 'bbox_unq1', cell 'U5176' does not drive any nets. (LINT-1)
+Warning: In design 'bbox_unq1', cell 'U5177' does not drive any nets. (LINT-1)
+Warning: In design 'bbox_unq1', cell 'U5531' does not drive any nets. (LINT-1)
 Warning: In design 'rast', port 'poly_R10S[2][2][23]' is not connected to any nets. (LINT-28)
 Warning: In design 'rast', port 'poly_R10S[2][2][22]' is not connected to any nets. (LINT-28)
 Warning: In design 'rast', port 'poly_R10S[2][2][21]' is not connected to any nets. (LINT-28)
@@ -244,7 +234,6 @@ Warning: In design 'sampletest_unq1', port 'poly_R16S[1][2][1]' is not connected
 Warning: In design 'sampletest_unq1', port 'poly_R16S[1][2][0]' is not connected to any nets. (LINT-28)
 Warning: In design 'sampletest_unq1', port 'sample_R16S[1][1]' is not connected to any nets. (LINT-28)
 Warning: In design 'sampletest_unq1', port 'sample_R16S[1][0]' is not connected to any nets. (LINT-28)
-Warning: In design 'sampletest_unq1', port 'sample_R16S[0][3]' is not connected to any nets. (LINT-28)
 Warning: In design 'sampletest_unq1', port 'sample_R16S[0][1]' is not connected to any nets. (LINT-28)
 Warning: In design 'sampletest_unq1', port 'sample_R16S[0][0]' is not connected to any nets. (LINT-28)
 Warning: In design 'sampletest_unq1', port 'isQuad_R16H' is not connected to any nets. (LINT-28)
@@ -253,8 +242,8 @@ Warning: In design 'sampletest_unq1', port 'hit_R18S[1][0]' is not connected to 
 Warning: In design 'sampletest_unq1', port 'hit_R18S[0][1]' is not connected to any nets. (LINT-28)
 Warning: In design 'sampletest_unq1', port 'hit_R18S[0][0]' is not connected to any nets. (LINT-28)
 Warning: In design 'rast', output port 'hit_R18S[1][1]' is connected directly to output port 'hit_R18S[0][0]'. (LINT-31)
-Warning: In design 'rast', output port 'hit_R18S[1][1]' is connected directly to output port 'hit_R18S[1][0]'. (LINT-31)
 Warning: In design 'rast', output port 'hit_R18S[1][1]' is connected directly to output port 'hit_R18S[0][1]'. (LINT-31)
+Warning: In design 'rast', output port 'hit_R18S[1][1]' is connected directly to output port 'hit_R18S[1][0]'. (LINT-31)
 Warning: In design 'sampletest_unq1', output port 'hit_R18S[1][18]' is connected directly to output port 'hit_R18S[0][4]'. (LINT-31)
 Warning: In design 'sampletest_unq1', output port 'hit_R18S[1][17]' is connected directly to output port 'hit_R18S[0][3]'. (LINT-31)
 Warning: In design 'sampletest_unq1', output port 'hit_R18S[1][16]' is connected directly to output port 'hit_R18S[0][2]'. (LINT-31)
@@ -262,9 +251,9 @@ Warning: In design 'sampletest_unq1', output port 'hit_R18S[1][4]' is connected 
 Warning: In design 'sampletest_unq1', output port 'hit_R18S[1][3]' is connected directly to output port 'hit_R18S[0][17]'. (LINT-31)
 Warning: In design 'sampletest_unq1', output port 'hit_R18S[1][2]' is connected directly to output port 'hit_R18S[0][16]'. (LINT-31)
 Warning: In design 'rast', the same net is connected to more than one pin on submodule 'bbox'. (LINT-33)
-   Net 'hit_R18S[0][1]' is connected to pins 'poly_R10S[2][2][23]', 'poly_R10S[2][2][22]'', 'poly_R10S[2][2][21]', 'poly_R10S[2][2][20]', 'poly_R10S[2][2][19]', 'poly_R10S[2][2][18]', 'poly_R10S[2][2][17]', 'poly_R10S[2][2][16]', 'poly_R10S[2][2][15]', 'poly_R10S[2][2][14]', 'poly_R10S[2][2][13]', 'poly_R10S[2][2][12]', 'poly_R10S[2][2][11]', 'poly_R10S[2][2][10]', 'poly_R10S[2][2][9]', 'poly_R10S[2][2][8]', 'poly_R10S[2][2][7]', 'poly_R10S[2][2][6]', 'poly_R10S[2][2][5]', 'poly_R10S[2][2][4]', 'poly_R10S[2][2][3]', 'poly_R10S[2][2][2]', 'poly_R10S[2][2][1]', 'poly_R10S[2][2][0]', 'poly_R10S[1][2][23]', 'poly_R10S[1][2][22]', 'poly_R10S[1][2][21]', 'poly_R10S[1][2][20]', 'poly_R10S[1][2][19]', 'poly_R10S[1][2][18]', 'poly_R10S[1][2][17]', 'poly_R10S[1][2][16]', 'poly_R10S[1][2][15]', 'poly_R10S[1][2][14]', 'poly_R10S[1][2][13]', 'poly_R10S[1][2][12]', 'poly_R10S[1][2][11]', 'poly_R10S[1][2][10]', 'poly_R10S[1][2][9]', 'poly_R10S[1][2][8]', 'poly_R10S[1][2][7]', 'poly_R10S[1][2][6]', 'poly_R10S[1][2][5]', 'poly_R10S[1][2][4]', 'poly_R10S[1][2][3]', 'poly_R10S[1][2][2]', 'poly_R10S[1][2][1]', 'poly_R10S[1][2][0]', 'isQuad_R10H', 'subSample_RnnnnU[3]'.
+   Net 'hit_R18S[1][1]' is connected to pins 'poly_R10S[2][2][23]', 'poly_R10S[2][2][22]'', 'poly_R10S[2][2][21]', 'poly_R10S[2][2][20]', 'poly_R10S[2][2][19]', 'poly_R10S[2][2][18]', 'poly_R10S[2][2][17]', 'poly_R10S[2][2][16]', 'poly_R10S[2][2][15]', 'poly_R10S[2][2][14]', 'poly_R10S[2][2][13]', 'poly_R10S[2][2][12]', 'poly_R10S[2][2][11]', 'poly_R10S[2][2][10]', 'poly_R10S[2][2][9]', 'poly_R10S[2][2][8]', 'poly_R10S[2][2][7]', 'poly_R10S[2][2][6]', 'poly_R10S[2][2][5]', 'poly_R10S[2][2][4]', 'poly_R10S[2][2][3]', 'poly_R10S[2][2][2]', 'poly_R10S[2][2][1]', 'poly_R10S[2][2][0]', 'poly_R10S[1][2][23]', 'poly_R10S[1][2][22]', 'poly_R10S[1][2][21]', 'poly_R10S[1][2][20]', 'poly_R10S[1][2][19]', 'poly_R10S[1][2][18]', 'poly_R10S[1][2][17]', 'poly_R10S[1][2][16]', 'poly_R10S[1][2][15]', 'poly_R10S[1][2][14]', 'poly_R10S[1][2][13]', 'poly_R10S[1][2][12]', 'poly_R10S[1][2][11]', 'poly_R10S[1][2][10]', 'poly_R10S[1][2][9]', 'poly_R10S[1][2][8]', 'poly_R10S[1][2][7]', 'poly_R10S[1][2][6]', 'poly_R10S[1][2][5]', 'poly_R10S[1][2][4]', 'poly_R10S[1][2][3]', 'poly_R10S[1][2][2]', 'poly_R10S[1][2][1]', 'poly_R10S[1][2][0]', 'isQuad_R10H', 'subSample_RnnnnU[3]'.
 Warning: In design 'rast', the same net is connected to more than one pin on submodule 'sampletest'. (LINT-33)
-   Net 'hit_R18S[0][1]' is connected to pins 'poly_R16S[2][2][23]', 'poly_R16S[2][2][22]'', 'poly_R16S[2][2][21]', 'poly_R16S[2][2][20]', 'poly_R16S[2][2][19]', 'poly_R16S[2][2][18]', 'poly_R16S[2][2][17]', 'poly_R16S[2][2][16]', 'poly_R16S[2][2][15]', 'poly_R16S[2][2][14]', 'poly_R16S[2][2][13]', 'poly_R16S[2][2][12]', 'poly_R16S[2][2][11]', 'poly_R16S[2][2][10]', 'poly_R16S[2][2][9]', 'poly_R16S[2][2][8]', 'poly_R16S[2][2][7]', 'poly_R16S[2][2][6]', 'poly_R16S[2][2][5]', 'poly_R16S[2][2][4]', 'poly_R16S[2][2][3]', 'poly_R16S[2][2][2]', 'poly_R16S[2][2][1]', 'poly_R16S[2][2][0]', 'poly_R16S[1][2][23]', 'poly_R16S[1][2][22]', 'poly_R16S[1][2][21]', 'poly_R16S[1][2][20]', 'poly_R16S[1][2][19]', 'poly_R16S[1][2][18]', 'poly_R16S[1][2][17]', 'poly_R16S[1][2][16]', 'poly_R16S[1][2][15]', 'poly_R16S[1][2][14]', 'poly_R16S[1][2][13]', 'poly_R16S[1][2][12]', 'poly_R16S[1][2][11]', 'poly_R16S[1][2][10]', 'poly_R16S[1][2][9]', 'poly_R16S[1][2][8]', 'poly_R16S[1][2][7]', 'poly_R16S[1][2][6]', 'poly_R16S[1][2][5]', 'poly_R16S[1][2][4]', 'poly_R16S[1][2][3]', 'poly_R16S[1][2][2]', 'poly_R16S[1][2][1]', 'poly_R16S[1][2][0]', 'sample_R16S[1][1]', 'sample_R16S[1][0]', 'sample_R16S[0][1]', 'sample_R16S[0][0]', 'isQuad_R16H'.
+   Net 'hit_R18S[1][1]' is connected to pins 'poly_R16S[2][2][23]', 'poly_R16S[2][2][22]'', 'poly_R16S[2][2][21]', 'poly_R16S[2][2][20]', 'poly_R16S[2][2][19]', 'poly_R16S[2][2][18]', 'poly_R16S[2][2][17]', 'poly_R16S[2][2][16]', 'poly_R16S[2][2][15]', 'poly_R16S[2][2][14]', 'poly_R16S[2][2][13]', 'poly_R16S[2][2][12]', 'poly_R16S[2][2][11]', 'poly_R16S[2][2][10]', 'poly_R16S[2][2][9]', 'poly_R16S[2][2][8]', 'poly_R16S[2][2][7]', 'poly_R16S[2][2][6]', 'poly_R16S[2][2][5]', 'poly_R16S[2][2][4]', 'poly_R16S[2][2][3]', 'poly_R16S[2][2][2]', 'poly_R16S[2][2][1]', 'poly_R16S[2][2][0]', 'poly_R16S[1][2][23]', 'poly_R16S[1][2][22]', 'poly_R16S[1][2][21]', 'poly_R16S[1][2][20]', 'poly_R16S[1][2][19]', 'poly_R16S[1][2][18]', 'poly_R16S[1][2][17]', 'poly_R16S[1][2][16]', 'poly_R16S[1][2][15]', 'poly_R16S[1][2][14]', 'poly_R16S[1][2][13]', 'poly_R16S[1][2][12]', 'poly_R16S[1][2][11]', 'poly_R16S[1][2][10]', 'poly_R16S[1][2][9]', 'poly_R16S[1][2][8]', 'poly_R16S[1][2][7]', 'poly_R16S[1][2][6]', 'poly_R16S[1][2][5]', 'poly_R16S[1][2][4]', 'poly_R16S[1][2][3]', 'poly_R16S[1][2][2]', 'poly_R16S[1][2][1]', 'poly_R16S[1][2][0]', 'sample_R16S[1][1]', 'sample_R16S[1][0]', 'sample_R16S[0][1]', 'sample_R16S[0][0]', 'isQuad_R16H'.
 Warning: In design 'rast', the same net is connected to more than one pin on submodule 'sampletest'. (LINT-33)
    Net 'sample_R16S[1][18]' is connected to pins 'sample_R16S[1][18]', 'sample_R16S[0][4]''.
 Warning: In design 'rast', the same net is connected to more than one pin on submodule 'sampletest'. (LINT-33)

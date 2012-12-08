@@ -91,6 +91,7 @@
 module rast_driver_unq1 
  (
    input logic halt_RnnnnL ,       // Input: Indicates No Work Should Be Done
+	 input logic validPoly_R13H ,
 
    input logic rst,                // Input: Reset
    input logic clk,                // Input: Clock 
@@ -221,7 +222,8 @@ module rast_driver_unq1
 	 // Now start driving the signals
 	 while (!$feof(fh)) begin
 	     // Wait until the design is ready (unhalted)
-	    while( ! halt_RnnnnL ) @(posedge clk);
+	 		// Even if halted, executed if BB poly out is invalid (smashing!)
+	    while( ! ( halt_RnnnnL | !(validPoly_R13H) ) ) @(posedge clk);
 
 	    // read a polygon from the file\
 	    // Need to fix conversion tool to include depth

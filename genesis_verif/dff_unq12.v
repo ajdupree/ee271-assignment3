@@ -20,7 +20,7 @@
 //	From 'generate' statement (priority=5):
 // Parameter BitWidth 	= 2
 // Parameter Retime 	= NO
-// Parameter PipelineDepth 	= 5
+// Parameter PipelineDepth 	= 3
 //
 //		---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
@@ -53,7 +53,7 @@
  * ****************************************************************************/
 // BitWidth (_GENESIS2_INHERITANCE_PRIORITY_) = 2
 //
-// PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 5
+// PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 3
 //
 // Retime (_GENESIS2_INHERITANCE_PRIORITY_) = NO
 //
@@ -72,7 +72,7 @@ module dff_unq12 (
     set_optimize_registers false -design [current_design]
     */
    
-   //   DW03_pipe_reg #(5,2) dff ( .A(in) , .clk(clk) , .B(out) ) ;
-   DW_pl_reg #(.stages(6),.in_reg(0),.out_reg(0),.width(2),.rst_mode(0)) dff ( .data_in(in) , .clk(clk) , .data_out(out), .rst_n(!reset), .enable({5{en}}) );
+   //   DW03_pipe_reg #(3,2) dff ( .A(in) , .clk(clk) , .B(out) ) ;
+   DW_pl_reg #(.stages(4),.in_reg(0),.out_reg(0),.width(2),.rst_mode(0)) dff ( .data_in(in) , .clk(clk) , .data_out(out), .rst_n(!reset), .enable({3{en}}) );
    
 endmodule

@@ -18,9 +18,9 @@
 // --------------- Begin Pre-Generation Parameters Status Report ---------------
 //
 //	From 'generate' statement (priority=5):
-// Parameter BitWidth 	= 24
+// Parameter BitWidth 	= 2
 // Parameter Retime 	= NO
-// Parameter PipelineDepth 	= 3
+// Parameter PipelineDepth 	= 5
 //
 //		---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
@@ -51,17 +51,17 @@
 /*******************************************************************************
  * PARAMETERIZATION
  * ****************************************************************************/
-// BitWidth (_GENESIS2_INHERITANCE_PRIORITY_) = 24
+// BitWidth (_GENESIS2_INHERITANCE_PRIORITY_) = 2
 //
-// PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 3
+// PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 5
 //
 // Retime (_GENESIS2_INHERITANCE_PRIORITY_) = NO
 //
 
 module dff_unq18 (
-		input logic [23:0]  in, 
+		input logic [1:0]  in, 
 		input logic 		    clk, reset, en, 
-		output logic [23:0] out
+		output logic [1:0] out
 		);
 
    
@@ -72,7 +72,7 @@ module dff_unq18 (
     set_optimize_registers false -design [current_design]
     */
    
-   //   DW03_pipe_reg #(3,24) dff ( .A(in) , .clk(clk) , .B(out) ) ;
-   DW_pl_reg #(.stages(4),.in_reg(0),.out_reg(0),.width(24),.rst_mode(0)) dff ( .data_in(in) , .clk(clk) , .data_out(out), .rst_n(!reset), .enable({3{en}}) );
+   //   DW03_pipe_reg #(5,2) dff ( .A(in) , .clk(clk) , .B(out) ) ;
+   DW_pl_reg #(.stages(6),.in_reg(0),.out_reg(0),.width(2),.rst_mode(0)) dff ( .data_in(in) , .clk(clk) , .data_out(out), .rst_n(!reset), .enable({5{en}}) );
    
 endmodule

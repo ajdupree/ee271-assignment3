@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : rast
 Version: F-2011.09-SP4
-Date   : Wed Dec  5 16:17:16 2012
+Date   : Fri Dec  7 10:27:26 2012
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.
@@ -14,9 +14,9 @@ Date   : Wed Dec  5 16:17:16 2012
 Operating Conditions: MLCOM   Library: tcbn45gsbwpml
 Wire Load Model Mode: top
 
-  Startpoint: sampletest/DP_OP_29J2_127_9254/clk_r_REG1277_S10
-              (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: sampletest/DP_OP_29J2_127_9254/clk_r_REG14_S12
+  Startpoint: poly_R10S[0][0][3]
+              (input port clocked by clk)
+  Endpoint: bbox/DP_OP_59J2_124_183/clk_r_REG1950_S1
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -30,32 +30,30 @@ Wire Load Model Mode: top
   --------------------------------------------------------------------------
   clock clk (rise edge)                                 0.0000     0.0000
   clock network delay (ideal)                           0.0000     0.0000
-  sampletest/DP_OP_29J2_127_9254/clk_r_REG1277_S10/CP (DFSNQD4BWP)
-                                                        0.0000 #   0.0000 r
-  sampletest/DP_OP_29J2_127_9254/clk_r_REG1277_S10/Q (DFSNQD4BWP)
-                                                        0.0434     0.0434 r
-  sampletest/U2864/Z (CKXOR2D2BWP)                      0.0309     0.0743 f
-  sampletest/U3526/ZN (OAI22D2BWP)                      0.0155     0.0897 r
-  sampletest/U3469/S (FA1D2BWP)                         0.0488     0.1385 f
-  sampletest/U4164/S (FA1D4BWP)                         0.0414     0.1799 r
-  sampletest/U4163/S (FA1D2BWP)                         0.0403     0.2202 r
-  sampletest/U4003/S (FA1D2BWP)                         0.0441     0.2644 f
-  sampletest/U5582/S (FA1D2BWP)                         0.0394     0.3038 r
-  sampletest/DP_OP_29J2_127_9254/clk_r_REG14_S12/D (DFCNQD2BWP)
-                                                        0.0000     0.3038 r
-  data arrival time                                                0.3038
+  input external delay                                  0.2250     0.2250 r
+  poly_R10S[0][0][3] (in)                               0.0082     0.2332 r
+  U1184/Z (DCCKBD4BWP)                                  0.0142     0.2475 r
+  bbox/poly_R10S[0][0][3] (bbox_unq1)                   0.0000     0.2475 r
+  bbox/U2/ZN (CKND6BWP)                                 0.0059     0.2534 f
+  bbox/U2023/ZN (NR2XD3BWP)                             0.0108     0.2642 r
+  bbox/U2104/ZN (OAI21D4BWP)                            0.0090     0.2733 f
+  bbox/U2919/Z (AO21D4BWP)                              0.0251     0.2983 f
+  bbox/U6/Z (XOR2D2BWP)                                 0.0301     0.3285 r
+  bbox/DP_OP_59J2_124_183/clk_r_REG1950_S1/D (EDFCNQD1BWP)
+                                                        0.0000     0.3285 r
+  data arrival time                                                0.3285
 
-  clock clk (rise edge)                                 0.2500     0.2500
-  clock network delay (ideal)                           0.0000     0.2500
-  sampletest/DP_OP_29J2_127_9254/clk_r_REG14_S12/CP (DFCNQD2BWP)
-                                                        0.0000     0.2500 r
-  library setup time                                   -0.0081     0.2419
-  data required time                                               0.2419
+  clock clk (rise edge)                                 0.3000     0.3000
+  clock network delay (ideal)                           0.0000     0.3000
+  bbox/DP_OP_59J2_124_183/clk_r_REG1950_S1/CP (EDFCNQD1BWP)
+                                                        0.0000     0.3000 r
+  library setup time                                   -0.0317     0.2683
+  data required time                                               0.2683
   --------------------------------------------------------------------------
-  data required time                                               0.2419
-  data arrival time                                               -0.3038
+  data required time                                               0.2683
+  data arrival time                                               -0.3285
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                -0.0619
+  slack (VIOLATED)                                                -0.0602
 
 
 1

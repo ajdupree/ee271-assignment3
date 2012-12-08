@@ -84,6 +84,8 @@ print { $self->{OutfileHandle} } ' * *******************************************
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } 'module '; print { $self->{OutfileHandle} } mname(); print { $self->{OutfileHandle} } ' ';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '(';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '  input logic signed   ['; print { $self->{OutfileHandle} } $sig_fig; print { $self->{OutfileHandle} } '-1:0]  poly_R10S['; print { $self->{OutfileHandle} } $verts; print { $self->{OutfileHandle} } '-1:0]['; print { $self->{OutfileHandle} } $axis; print { $self->{OutfileHandle} } '-1:0],  // 4 Sets X,Y Fixed Point Values';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '  input logic signed   ['; print { $self->{OutfileHandle} } $sig_fig; print { $self->{OutfileHandle} } '-1:0]  poly_R16S['; print { $self->{OutfileHandle} } $verts; print { $self->{OutfileHandle} } '-1:0]['; print { $self->{OutfileHandle} } $axis; print { $self->{OutfileHandle} } '-1:0],  // 4 Sets X,Y Fixed Point Values';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '  input logic unsigned ['; print { $self->{OutfileHandle} } $sig_fig; print { $self->{OutfileHandle} } '-1:0]  color_R16U['; print { $self->{OutfileHandle} } $colors; print { $self->{OutfileHandle} } '-1:0],          // 4 Sets X,Y Fixed Point Values';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '  input logic                        isQuad_R16H,                     // Is Poly Quad?';print { $self->{OutfileHandle} } "\n"; 
@@ -113,7 +115,7 @@ print { $self->{OutfileHandle} } ' ';print { $self->{OutfileHandle} } "\n";
 	                        PipelineDepth=>$pipe_depth,
 	                        Retime=>'NO' );
 print { $self->{OutfileHandle} } '	'; print { $self->{OutfileHandle} } $d_01->instantiate(); print { $self->{OutfileHandle} } ' (';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '					 .in(poly_R16S) , ';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '					 .in(poly_R10S) , ';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '				     .clk(clk) , .reset(rst), .en(1\'b1),';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '				     .out(poly_RnnS));';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n"; 
@@ -124,7 +126,7 @@ print { $self->{OutfileHandle} } '';print { $self->{OutfileHandle} } "\n";
 	                        PipelineDepth=>$pipe_depth-1,
 	                        Retime=>'NO' );
 print { $self->{OutfileHandle} } '	'; print { $self->{OutfileHandle} } $d_011->instantiate(); print { $self->{OutfileHandle} } ' (';print { $self->{OutfileHandle} } "\n"; 
-print { $self->{OutfileHandle} } '					 .in(poly_R16S) , ';print { $self->{OutfileHandle} } "\n"; 
+print { $self->{OutfileHandle} } '					 .in(poly_R10S) , ';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '				     .clk(clk) , .reset(rst), .en(1\'b1),';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '				     .out(poly_Rn1S));';print { $self->{OutfileHandle} } "\n"; 
 print { $self->{OutfileHandle} } '					 			 ';print { $self->{OutfileHandle} } "\n"; 
