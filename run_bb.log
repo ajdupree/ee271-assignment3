@@ -1,0 +1,179 @@
+Warning : License for product VCSRuntime_Net(725) will expire within 3 days, on: 09-dec-2012.
+
+If you would like to temporarily disable this message, set 
+ the VCS_LIC_EXPIRE_WARNING environment variable to the number of days
+before expiration that you want this message to start (the minimum is 0).
+Chronologic VCS simulator copyright 1991-2011
+Contains Synopsys proprietary information.
+Compiler version F-2011.12_Full64; Runtime version F-2011.12_Full64;  Dec  7 19:05 2012
+Warning : License for product VT_TestbenchRuntime(802) will expire within 3 days, on: 09-dec-2012.
+
+If you would like to temporarily disable this message, set 
+ the VCS_LIC_EXPIRE_WARNING environment variable to the number of days
+before expiration that you want this message to start (the minimum is 0).
+Message: From $vcdplusmemon at time 0 in file genesis_verif/testbench_unq1.v line 373: [VCD+-SFSL]: 
+Setting file switch size limit to (100) megabytes.
+Message: From $vcdplusmemon at time 0 in file genesis_verif/testbench_unq1.v line 373: [VCD+-SVBS]: 
+Setting buffer size to (100) megabytes.
+time=         0 ************** Driver Is Initializing Input Signals *****************
+time=         0 ************** Loading Arguments *****************
+Simulation run with default random seed=12345
+Simulation will timout after 50000000 cycles
+Simulation will use test file /usr/class/ee271/project//vect//vec_271_04_sv.dat
+Seed=      12345 
+RT Warning: No condition matches in 'unique case' statement.
+        "genesis_synth/test_iterator_unq1.v", line 260, for top_rast.rast.test_iterator, at time     0.
+RT Warning: No condition matches in 'unique case' statement.
+        "genesis_synth/test_iterator_unq1.v", line 260, for top_rast.rast.test_iterator, at time     0.
+time=     15000 ************** Driver Is Initializing Test from File *****************
+Setting screen params: w=800 h=600 msaa=16
+time=     30000 ************** Initializing FB and ZB *****************
+time=     30010 ************** Finished Init FB and ZB *****************
+time=     45000 ************** Runnning Test *****************
+time=     45000 ************** Driver Is Runnning Test -->/usr/class/ee271/project//vect//vec_271_04_sv.dat<-- *****************
+time=     49000 	         0 samples processed,          0 of them hit
+time=     50000 	         0 samples processed,          0 of them hit
+time=     51000 	         0 samples processed,          0 of them hit
+time=     52000 	         0 samples processed,          0 of them hit
+time=     53000 	         0 samples processed,          0 of them hit
+time=     54000 	         0 samples processed,          0 of them hit
+time=     55000 	         0 samples processed,          0 of them hit
+time=     56000 	         0 samples processed,          0 of them hit
+time=     57000 	         0 samples processed,          0 of them hit
+time=     58000 	         0 samples processed,          0 of them hit
+time=     59000 	         0 samples processed,          0 of them hit
+time= 100330000 	    100000 samples processed,      26417 of them hit
+time= 200330000 	    200000 samples processed,      53755 of them hit
+time= 300330000 	    300000 samples processed,      80733 of them hit
+time= 400330000 	    400000 samples processed,     107849 of them hit
+time= 500343000 	    500000 samples processed,     133434 of them hit
+time= 608490000 	    600000 samples processed,     156278 of them hit
+time= 717997000 	    700000 samples processed,     182441 of them hit
+time= 817997000 	    800000 samples processed,     209806 of them hit
+time= 917997000 	    900000 samples processed,     236683 of them hit
+time=1017997000 	   1000000 samples processed,     262911 of them hit
+time=1117997000 	   1100000 samples processed,     288445 of them hit
+time=1220800000 	   1200000 samples processed,     313623 of them hit
+time=1339191000 	   1300000 samples processed,     336362 of them hit
+time=1440479000 	   1400000 samples processed,     359864 of them hit
+time=1540479000 	   1500000 samples processed,     386091 of them hit
+time=1640479000 	   1600000 samples processed,     413736 of them hit
+time=1740479000 	   1700000 samples processed,     443296 of them hit
+time=1840479000 	   1800000 samples processed,     471019 of them hit
+time=1940479000 	   1900000 samples processed,     496243 of them hit
+time=2040479000 	   2000000 samples processed,     524209 of them hit
+time=2140479000 	   2100000 samples processed,     552281 of them hit
+time=2240479000 	   2200000 samples processed,     581529 of them hit
+time=2340479000 	   2300000 samples processed,     608608 of them hit
+time=2440479000 	   2400000 samples processed,     638305 of them hit
+time=2540492000 	   2500000 samples processed,     664302 of them hit
+time=2640492000 	   2600000 samples processed,     693470 of them hit
+time=2743328000 	   2700000 samples processed,     721008 of them hit
+time=2846279000 	   2800000 samples processed,     743384 of them hit
+time=2989257000 	   2900000 samples processed,     768445 of them hit
+time=3089257000 	   3000000 samples processed,     795220 of them hit
+time=3189257000 	   3100000 samples processed,     824095 of them hit
+time=3289257000 	   3200000 samples processed,     853114 of them hit
+time=3389257000 	   3300000 samples processed,     878927 of them hit
+time=3489257000 	   3400000 samples processed,     904228 of them hit
+time=3589257000 	   3500000 samples processed,     932363 of them hit
+time=3689257000 	   3600000 samples processed,     960342 of them hit
+time=3789257000 	   3700000 samples processed,     988886 of them hit
+time=3889257000 	   3800000 samples processed,    1016950 of them hit
+time=3989257000 	   3900000 samples processed,    1042279 of them hit
+time=4089257000 	   4000000 samples processed,    1069804 of them hit
+time=4189257000 	   4100000 samples processed,    1096914 of them hit
+time=4289257000 	   4200000 samples processed,    1124894 of them hit
+time=4389315000 	   4300000 samples processed,    1153555 of them hit
+time=4492215000 	   4400000 samples processed,    1176735 of them hit
+time=4649113000 	   4500000 samples processed,    1198513 of them hit
+time=4749113000 	   4600000 samples processed,    1224831 of them hit
+time=4849113000 	   4700000 samples processed,    1249534 of them hit
+time=4955003000 	   4800000 samples processed,    1272048 of them hit
+time=5056089000 	   4900000 samples processed,    1295240 of them hit
+time=5159700000 	   5000000 samples processed,    1319585 of them hit
+time=5259700000 	   5100000 samples processed,    1348812 of them hit
+time=5359700000 	   5200000 samples processed,    1376711 of them hit
+time=5459700000 	   5300000 samples processed,    1404971 of them hit
+time=5559700000 	   5400000 samples processed,    1433592 of them hit
+time=5659700000 	   5500000 samples processed,    1461504 of them hit
+time=5759700000 	   5600000 samples processed,    1489379 of them hit
+time=5859700000 	   5700000 samples processed,    1518409 of them hit
+time=5959700000 	   5800000 samples processed,    1545958 of them hit
+time=6059700000 	   5900000 samples processed,    1575353 of them hit
+time=6159811000 	   6000000 samples processed,    1604444 of them hit
+time=6259811000 	   6100000 samples processed,    1633247 of them hit
+time=6360797000 	   6200000 samples processed,    1656166 of them hit
+time=6461791000 	   6300000 samples processed,    1684281 of them hit
+time=6561791000 	   6400000 samples processed,    1711419 of them hit
+time=6661791000 	   6500000 samples processed,    1738686 of them hit
+time=6763132000 	   6600000 samples processed,    1760156 of them hit
+time=6919818000 	   6700000 samples processed,    1779162 of them hit
+time=7022976000 	   6800000 samples processed,    1807261 of them hit
+time=7122976000 	   6900000 samples processed,    1837044 of them hit
+time=7223542000 	   7000000 samples processed,    1861877 of them hit
+time=7323542000 	   7100000 samples processed,    1888541 of them hit
+time=7423634000 	   7200000 samples processed,    1916864 of them hit
+time=7523634000 	   7300000 samples processed,    1945465 of them hit
+time=7623634000 	   7400000 samples processed,    1973345 of them hit
+time=7723634000 	   7500000 samples processed,    2001771 of them hit
+time=7823634000 	   7600000 samples processed,    2029819 of them hit
+time=7923634000 	   7700000 samples processed,    2058297 of them hit
+time=8023634000 	   7800000 samples processed,    2086662 of them hit
+time=8123634000 	   7900000 samples processed,    2111827 of them hit
+time=8223634000 	   8000000 samples processed,    2139090 of them hit
+time=8323634000 	   8100000 samples processed,    2167954 of them hit
+time=8423708000 	   8200000 samples processed,    2192136 of them hit
+time=8525460000 	   8300000 samples processed,    2218305 of them hit
+time=8625460000 	   8400000 samples processed,    2248037 of them hit
+time=8725522000 	   8500000 samples processed,    2274899 of them hit
+time=8828944000 	   8600000 samples processed,    2302002 of them hit
+time=8930284000 	   8700000 samples processed,    2328723 of them hit
+time=9030449000 	   8800000 samples processed,    2352716 of them hit
+time=9177521000 	   8900000 samples processed,    2371508 of them hit
+time=9308873000 	   9000000 samples processed,    2393448 of them hit
+time=9408965000 	   9100000 samples processed,    2421009 of them hit
+time=9508965000 	   9200000 samples processed,    2448222 of them hit
+time=9608965000 	   9300000 samples processed,    2474553 of them hit
+time=9710717000 	   9400000 samples processed,    2500213 of them hit
+time=9810765000 	   9500000 samples processed,    2526007 of them hit
+time=9916761000 	   9600000 samples processed,    2548829 of them hit
+time=10033321000 	   9700000 samples processed,    2569593 of them hit
+time=10136793000 	   9800000 samples processed,    2591878 of them hit
+time=10236793000 	   9900000 samples processed,    2620665 of them hit
+time=10336793000 	  10000000 samples processed,    2648877 of them hit
+time=10437876000 	  10100000 samples processed,    2672289 of them hit
+time=10537890000 	  10200000 samples processed,    2699733 of them hit
+time=10637890000 	  10300000 samples processed,    2727045 of them hit
+time=10737890000 	  10400000 samples processed,    2754714 of them hit
+time=10852449000 	  10500000 samples processed,    2776566 of them hit
+time=10963425000 	  10600000 samples processed,    2796151 of them hit
+time=11063964000 	  10700000 samples processed,    2822227 of them hit
+time=11164056000 	  10800000 samples processed,    2850841 of them hit
+time=11264056000 	  10900000 samples processed,    2879083 of them hit
+time=11364056000 	  11000000 samples processed,    2907472 of them hit
+time=11464130000 	  11100000 samples processed,    2934175 of them hit
+time=11565882000 	  11200000 samples processed,    2958451 of them hit
+time=11665896000 	  11300000 samples processed,    2984902 of them hit
+time=11769318000 	  11400000 samples processed,    3011794 of them hit
+time=11870658000 	  11500000 samples processed,    3038696 of them hit
+time=11970741000 	  11600000 samples processed,    3064553 of them hit
+time=12101638000 	  11700000 samples processed,    3081100 of them hit
+time=12201730000 	  11800000 samples processed,    3108029 of them hit
+time=12301730000 	  11900000 samples processed,    3136054 of them hit
+time=12403482000 	  12000000 samples processed,    3161689 of them hit
+time=12503482000 	  12100000 samples processed,    3188130 of them hit
+time=12613118000 ************** Driver Is Done *****************
+time=12613133010 ************** Writing Final Image to File *****************
+time=12613133030 ************** Finished Final Image to File *****************
+time=12613133040 ********************FINISH***********************
+Cycles:    12613085 uPoly:      933265 sampleTests:    12194669 sampleHits:     3207324 
+
+JJ: uPoly / cycle : 0.073992 
+JJ: cycle / uPoly : 13.515009 
+$finish called from file "genesis_verif/testbench_unq1.v", line 332.
+$finish at simulation time          12613133040
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 12613133040 ns
+CPU Time:    795.620 seconds;       Data structure size:   0.3Mb
+Fri Dec  7 19:18:36 2012

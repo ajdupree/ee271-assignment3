@@ -56,7 +56,7 @@
             <Min>1</Min>
             <Step>1</Step>
           </Range>
-          <Val>3</Val>
+          <Val>4</Val>
         </ParameterItem>
         <ParameterItem>
           <Doc>Number of Pipe Stages in iter module</Doc>

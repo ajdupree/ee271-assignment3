@@ -12,7 +12,7 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/rtl/bbox.vp
+//  Source file: /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/rtl/bbox.vp
 //  Source template: bbox
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------
@@ -23,7 +23,7 @@
 // Parameter Axis 	= 3
 // Parameter SigFig 	= 24
 // Parameter Colors 	= 3
-// Parameter PipelineDepth 	= 3
+// Parameter PipelineDepth 	= 4
 //
 //		---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
@@ -153,7 +153,7 @@
 //
 // Colors (_GENESIS2_INHERITANCE_PRIORITY_) = 3
 //
-// PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 3
+// PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 4
 //
 
 

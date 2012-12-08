@@ -12,7 +12,7 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/verif/clocker.vp
+//  Source file: /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/verif/clocker.vp
 //  Source template: clocker
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------

@@ -12,7 +12,7 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/rtl/dff.vp
+//  Source file: /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/rtl/dff.vp
 //  Source template: dff
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------
@@ -20,7 +20,7 @@
 //	From 'generate' statement (priority=5):
 // Parameter BitWidth 	= 2
 // Parameter Retime 	= NO
-// Parameter PipelineDepth 	= 4
+// Parameter PipelineDepth 	= 5
 //
 //		---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
@@ -53,7 +53,7 @@
  * ****************************************************************************/
 // BitWidth (_GENESIS2_INHERITANCE_PRIORITY_) = 2
 //
-// PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 4
+// PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 5
 //
 // Retime (_GENESIS2_INHERITANCE_PRIORITY_) = NO
 //
@@ -72,7 +72,7 @@ module dff_unq15 (
     set_optimize_registers false -design [current_design]
     */
    
-   //   DW03_pipe_reg #(4,2) dff ( .A(in) , .clk(clk) , .B(out) ) ;
-   DW_pl_reg #(.stages(5),.in_reg(0),.out_reg(0),.width(2),.rst_mode(0)) dff ( .data_in(in) , .clk(clk) , .data_out(out), .rst_n(!reset), .enable({4{en}}) );
+   //   DW03_pipe_reg #(5,2) dff ( .A(in) , .clk(clk) , .B(out) ) ;
+   DW_pl_reg #(.stages(6),.in_reg(0),.out_reg(0),.width(2),.rst_mode(0)) dff ( .data_in(in) , .clk(clk) , .data_out(out), .rst_n(!reset), .enable({5{en}}) );
    
 endmodule

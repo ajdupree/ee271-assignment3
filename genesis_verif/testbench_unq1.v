@@ -12,14 +12,14 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/verif/testbench.vp
+//  Source file: /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/verif/testbench.vp
 //  Source template: testbench
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------
 //
 //	From 'generate' statement (priority=5):
 // Parameter Radix 	= 10
-// Parameter PipesBox 	= 3
+// Parameter PipesBox 	= 4
 // Parameter Axis 	= 3
 // Parameter DUT_obj 	= Data structure of type rast
 // Parameter PipesIter 	= 1
@@ -73,7 +73,7 @@
 //
 // Colors (_GENESIS2_INHERITANCE_PRIORITY_) = 3
 //
-// PipesBox (_GENESIS2_INHERITANCE_PRIORITY_) = 3
+// PipesBox (_GENESIS2_INHERITANCE_PRIORITY_) = 4
 //
 // PipesIter (_GENESIS2_INHERITANCE_PRIORITY_) = 1
 //

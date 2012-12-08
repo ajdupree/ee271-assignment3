@@ -22,7 +22,5 @@ genesis_synth/dff2_unq6.v
 genesis_synth/dff_unq8.v
 genesis_synth/hash_jtree_unq1.v
 genesis_synth/dff_unq9.v
-genesis_synth/dff2_unq7.v
-genesis_synth/dff_unq10.v
 genesis_synth/sampletest_unq1.v
 genesis_synth/rast.v

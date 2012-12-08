@@ -7,14 +7,13 @@ Warning-[LNX_OS_VERUN] Unsupported Linux version
 
 
 Warning-[LINX_KRNL] Unsupported Linux kernel
-  Linux kernel '3.2.0-34-generic' is not supported.
+  Linux kernel '3.2.0-30-generic' is not supported.
   Supported versions are 2.4* or 2.6*.
 
 *** Using c compiler gcc instead of cc ...
 *** Using loader gcc instead of cc ...
-/usr/class/ee/synopsys/vcs-mx/F-2011.12/bin/vcs: line 1633: dc: command not found
                          Chronologic VCS (TM)
-         Version F-2011.12_Full64 -- Fri Dec  7 18:30:12 2012
+         Version F-2011.12_Full64 -- Fri Dec  7 19:05:10 2012
                Copyright (c) 1991-2011 by Synopsys Inc.
                          ALL RIGHTS RESERVED
 
@@ -71,13 +70,12 @@ Parsing design file 'genesis_verif/dff2_unq10.v'
 Parsing design file 'genesis_verif/dff_unq15.v'
 Parsing design file 'genesis_verif/smpl_sb_unq1.v'
 Parsing design file 'genesis_verif/dff_unq16.v'
-Parsing design file 'genesis_verif/dff_unq17.v'
 Parsing design file 'genesis_verif/dff2_unq11.v'
-Parsing design file 'genesis_verif/dff3_unq8.v'
-Parsing design file 'genesis_verif/dff2_unq12.v'
-Parsing design file 'genesis_verif/dff_unq18.v'
-Parsing design file 'genesis_verif/dff_unq19.v'
+Parsing design file 'genesis_verif/dff_unq17.v'
 Parsing design file 'genesis_verif/smpl_cnt_sb_unq1.v'
+Parsing design file 'genesis_verif/dff_unq18.v'
+Parsing design file 'genesis_verif/dff2_unq12.v'
+Parsing design file 'genesis_verif/dff3_unq8.v'
 Parsing design file 'genesis_verif/perf_monitor_unq1.v'
 Parsing design file 'genesis_verif/testbench_unq1.v'
 Parsing design file 'genesis_verif/top_rast.v'
@@ -99,8 +97,8 @@ If you would like to temporarily disable this message, set
  the VCS_LIC_EXPIRE_WARNING environment variable to the number of days
 before expiration that you want this message to start (the minimum is 0).
 Starting vcs inline pass...
-44 modules and 0 UDP read.
-Generating code for _VCSgd__vcs_unit_1282674485_hvXagb_1
+45 modules and 0 UDP read.
+Generating code for _VCSgd__vcs_unit_2037265243_HF5Mbb_1
 Generating code for _VCSgd_std_1
 recompiling module dff_unq1
 Generating code for _VCSgd_dff_unq1_TC2OEe_1
@@ -158,6 +156,8 @@ recompiling module dff2_unq8
 Generating code for _VCSgd_dff2_unq8_422XOe_1
 recompiling module dff3_unq6
 Generating code for _VCSgd_dff3_unq6_GBXE9d_1
+recompiling module dff_unq12
+Generating code for _VCSgd_dff_unq12_GIig1_1
 recompiling module bbx_sb_unq1
 Generating code for _VCSgd_bbx_sb_unq1_skNc5d_1
 recompiling module dff_unq14
@@ -172,35 +172,31 @@ recompiling module dff_unq15
 Generating code for _VCSgd_dff_unq15_nUif3_1
 recompiling module smpl_sb_unq1
 Generating code for _VCSgd_smpl_sb_unq1_ft953b_1
-recompiling module dff_unq17
-Generating code for _VCSgd_dff_unq17_VA3Scb_1
 recompiling module dff2_unq11
 Generating code for _VCSgd_dff2_unq11_eLimXb_1
-recompiling module dff3_unq8
-Generating code for _VCSgd_dff3_unq8_UTKGme_1
-recompiling module dff2_unq12
-Generating code for _VCSgd_dff2_unq12_9bcy9b_1
 recompiling module smpl_cnt_sb_unq1
 Generating code for _VCSgd_smpl_cnt_sb_unq1_ChfxP_1
+recompiling module dff_unq18
+Generating code for _VCSgd_dff_unq18_wehEb_1
+recompiling module dff2_unq12
+Generating code for _VCSgd_dff2_unq12_9bcy9b_1
+recompiling module dff3_unq8
+Generating code for _VCSgd_dff3_unq8_UTKGme_1
 recompiling module perf_monitor_unq1
 Generating code for _VCSgd_perf_monitor_unq1_RiFHS_1
 recompiling module testbench_unq1
 Generating code for _VCSgd_testbench_unq1_OpXQPe_1
 recompiling module top_rast
 Generating code for _VCSgd_top_rast_P7KCG_1
-All of 45 modules done
-/usr/class/ee/synopsys/vcs-mx/F-2011.12/bin/vcs: line 1633: dc: command not found
-/usr/class/ee/synopsys/vcs-mx/F-2011.12/bin/vcs: line 1633: dc: command not found
+All of 46 modules done
 Warning : License for product VCSCompiler_Net(723) will expire within 3 days, on: 09-dec-2012.
 
 If you would like to temporarily disable this message, set 
  the VCS_LIC_EXPIRE_WARNING environment variable to the number of days
 before expiration that you want this message to start (the minimum is 0).
-/usr/class/ee/synopsys/vcs-mx/F-2011.12/bin/vcs: line 1633: dc: command not found
-/usr/class/ee/synopsys/vcs-mx/F-2011.12/bin/vcs: line 1633: dc: command not found
-/usr/class/ee/synopsys/vcs-mx/F-2011.12/bin/vcs: line 1633: dc: command not found
-make[1]: Entering directory `/afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/csrc'
+make[1]: Entering directory `/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/csrc'
 if [ -x ../simv ]; then chmod -x ../simv; fi
-gcc  -o ../simv    -Wl,-whole-archive    -Wl,-no-whole-archive  /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/gold/rastBBox_fix_sv.o  _vcsobj_1_1.o  5NrI_d.o 5NrIB_d.o SIM_l.o    rmapats_mop.o rmapats.o      /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/libvirsim.so /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/liberrorinf.so /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/libsnpsmalloc.so     /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/libvcsnew.so /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/libuclinative.so         /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/vcs_save_restore_new.o -ldl -lm  -lc -lpthread -ldl 
+gcc  -o ../simv    -Wl,-whole-archive    -Wl,-no-whole-archive  /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/gold/rastBBox_fix_sv.o  _vcsobj_1_1.o  5NrI_d.o 5NrIB_d.o SIM_l.o    rmapats_mop.o rmapats.o      /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/libvirsim.so /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/liberrorinf.so /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/libsnpsmalloc.so     /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/libvcsnew.so /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/libuclinative.so         /usr/class/ee/synopsys/vcs-mx/F-2011.12/amd64/lib/vcs_save_restore_new.o -ldl -lm  -lc -lpthread -ldl 
 ../simv up to date
-make[1]: Leaving directory `/afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/csrc'
+make[1]: Leaving directory `/afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/csrc'
+CPU time: .724 seconds to compile + .080 seconds to elab + .264 seconds to link

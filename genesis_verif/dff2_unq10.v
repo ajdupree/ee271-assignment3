@@ -12,7 +12,7 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/rtl/dff2.vp
+//  Source file: /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/rtl/dff2.vp
 //  Source template: dff2
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------
@@ -21,7 +21,7 @@
 // Parameter BitWidth 	= 24
 // Parameter ArraySize1 	= 2
 // Parameter Retime 	= NO
-// Parameter PipelineDepth 	= 4
+// Parameter PipelineDepth 	= 5
 //
 //		---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
@@ -56,7 +56,7 @@
 //
 // ArraySize1 (_GENESIS2_INHERITANCE_PRIORITY_) = 2
 //
-// PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 4
+// PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 5
 //
 // Retime (_GENESIS2_INHERITANCE_PRIORITY_) = NO
 //

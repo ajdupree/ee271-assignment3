@@ -10,13 +10,11 @@ Genesis2::Manager->print_cmdline: Your Complete Genesis2 Command Line:
     -xml empty.xml                                                                                  \
     -parse                                                                                          \
     -srcpath ./                                                                                     \
-    -srcpath /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/rtl  \
-    -srcpath                                                                                        \
-        /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/verif     \
+    -srcpath /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/rtl                                \
+    -srcpath /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/verif                              \
     -incpath ./                                                                                     \
-    -incpath /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/rtl  \
-    -incpath                                                                                        \
-        /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/verif     \
+    -incpath /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/rtl                                \
+    -incpath /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/verif                              \
     -input bbx2trsl_monitor.vp bbx_sb.vp clocker.vp gm2rst_monitor.vp perf_monitor.vp               \
         rast_driver.vp rst2zbuff_monitor.vp smpl_cnt_sb.vp smpl_sb.vp testbench.vp top_rast.vp      \
         trsl2smpl_monitor.vp zbuff.vp bbox.vp dff.vp dff2.vp dff3.vp hash_jtree.vp rast.vp          \

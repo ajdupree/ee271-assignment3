@@ -12,7 +12,7 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/verif/smpl_sb.vp
+//  Source file: /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/verif/smpl_sb.vp
 //  Source template: smpl_sb
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------
@@ -194,23 +194,23 @@ module smpl_sb_unq1
 
    
 /* Pipe Required Signals */
-	dff3_unq7  d_01 (
+	dff3_unq6  d_01 (
 					 .in(poly_R16S) , 
 				     .clk(clk) , .reset(rst), .en(1'b1),
 				     .out(poly_RnnS));
 					 
-	dff2_unq9  d_02 (
+	dff2_unq7  d_02 (
 					 .in(color_R16U) , 
 				     .clk(clk) , .reset(rst), .en(1'b1),
 				     .out(color_RnnU));
 	
-	dff2_unq10  d_03 (
+	dff2_unq8  d_03 (
 					 .in(sample_R16S) , 
 				     .clk(clk) , .reset(rst), .en(1'b1),
 				     .out(sample_RnnS));				 
 					 						
 	
-	dff_unq15  d_04 (
+	dff_unq11  d_04 (
 					 .in({validSamp_R16H, isQuad_R16H}) , 
 				     .clk(clk) , .reset(rst), .en(1'b1),
 				     .out({validSamp_RnnH, isQuad_RnnH}));	

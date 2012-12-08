@@ -12,7 +12,7 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/rtl/sampletest.vp
+//  Source file: /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/rtl/sampletest.vp
 //  Source template: sampletest
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------
@@ -229,17 +229,17 @@ module  sampletest_unq1
 
    /* Flop R16 to R18_retime with retiming registers*/
    
-   dff2_unq7  d_samp_r1 (
+   dff2_unq1  d_samp_r1 (
 				.in(hit_R16S) , 
 				.clk(clk) , .reset(rst), .en(1'b1),
 				.out(hit_R18S_retime));
    
-   dff2_unq7  d_samp_r2(
+   dff2_unq1  d_samp_r2(
 			       .in(color_R16U) , 
 			       .clk(clk) , .reset(rst), .en(1'b1),
 			       .out(color_R18U_retime));
    
-   dff_unq10  d_samp_r3 (
+   dff_unq9  d_samp_r3 (
 				.in(hit_valid_R16H) , 
 				.clk(clk) , .reset(rst), .en(1'b1),
 				.out(hit_valid_R18H_retime));

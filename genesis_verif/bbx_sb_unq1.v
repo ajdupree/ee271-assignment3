@@ -12,7 +12,7 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /afs/ir.stanford.edu/users/a/s/asampat/EE271/assignment3-andrew/ee271-assignment3/verif/bbx_sb.vp
+//  Source file: /afs/ir.stanford.edu/users/a/j/ajdupree/assignment3/verif/bbx_sb.vp
 //  Source template: bbx_sb
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------
@@ -24,7 +24,7 @@
 // Parameter Axis 	= 3
 // Parameter SigFig 	= 24
 // Parameter Colors 	= 3
-// Parameter PipelineDepth 	= 3
+// Parameter PipelineDepth 	= 4
 //
 //		---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
@@ -72,7 +72,7 @@
 //
 // Colors (_GENESIS2_INHERITANCE_PRIORITY_) = 3
 //
-// PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 3
+// PipelineDepth (_GENESIS2_INHERITANCE_PRIORITY_) = 4
 //
 // Filename (_GENESIS2_INHERITANCE_PRIORITY_) = sb_log/bbx_sb.log
 //
@@ -222,12 +222,12 @@ module bbx_sb_unq1
 				     .clk(clk) , .reset(rst), .en(halt_RnnnnL | ~validPoly_R13H),
 				     .out(poly_RnnS));
 					 
-	dff_unq12  d_02 (
+	dff_unq11  d_02 (
 					 .in({validPoly_R10H, isQuad_R10H}) , 
 				     .clk(clk) , .reset(rst), .en(halt_RnnnnL | ~validPoly_R13H),
 				     .out({validPoly_RnnH, isQuad_RnnH}));
 
-	dff_unq13  d_03 (
+	dff_unq12  d_03 (
 					 .in(invalidate_R10H) , 
 				     .clk(clk) , .reset(rst), .en(halt_RnnnnL | ~validPoly_R13H),
 				     .out(invalidate_RnnH));
